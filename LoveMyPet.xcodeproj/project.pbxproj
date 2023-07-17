@@ -47,21 +47,14 @@
 		649064B22A65DF39001654F8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				649064BB2A65E28D001654F8 /* Components */,
 				649064B82A65DF8B001654F8 /* Styles */,
 				649064B72A65DF84001654F8 /* Modifiers */,
 				649064B62A65DF7C001654F8 /* Helpers */,
 				649064B52A65DF75001654F8 /* Extensions */,
 				649064B42A65DF6B001654F8 /* Protocols */,
-				649064B32A65DF63001654F8 /* Components */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		649064B32A65DF63001654F8 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		649064B42A65DF6B001654F8 /* Protocols */ = {
@@ -97,6 +90,13 @@
 			children = (
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		649064BB2A65E28D001654F8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		64B9AF482A578F04004E4386 /* App */ = {
