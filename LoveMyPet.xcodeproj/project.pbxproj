@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		649064C32A65E755001654F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649064C22A65E755001654F8 /* ContentView.swift */; };
 		64F575632A56072B004F4055 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F575622A56072B004F4055 /* LoveMyPetApp.swift */; };
 		64F575672A56072C004F4055 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F575662A56072C004F4055 /* Assets.xcassets */; };
 		64F5756A2A56072C004F4055 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F575692A56072C004F4055 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		649064C22A65E755001654F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		64F5755F2A56072B004F4055 /* LoveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F575622A56072B004F4055 /* LoveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveMyPetApp.swift; sourceTree = "<group>"; };
 		64F575662A56072C004F4055 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,49 +49,14 @@
 		649064B22A65DF39001654F8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				649064C12A65E4D8001654F8 /* Protocols */,
+				649064C02A65E4CD001654F8 /* Extensions */,
+				649064BF2A65E4B5001654F8 /* Helpers */,
+				649064BE2A65E4A9001654F8 /* Modifiers */,
+				649064BD2A65E49D001654F8 /* Styles */,
 				649064BB2A65E28D001654F8 /* Components */,
-				649064B82A65DF8B001654F8 /* Styles */,
-				649064B72A65DF84001654F8 /* Modifiers */,
-				649064B62A65DF7C001654F8 /* Helpers */,
-				649064B52A65DF75001654F8 /* Extensions */,
-				649064B42A65DF6B001654F8 /* Protocols */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		649064B42A65DF6B001654F8 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		649064B52A65DF75001654F8 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		649064B62A65DF7C001654F8 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		649064B72A65DF84001654F8 /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modifiers;
-			sourceTree = "<group>";
-		};
-		649064B82A65DF8B001654F8 /* Styles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Styles;
 			sourceTree = "<group>";
 		};
 		649064BB2A65E28D001654F8 /* Components */ = {
@@ -97,6 +64,41 @@
 			children = (
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		649064BD2A65E49D001654F8 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		649064BE2A65E4A9001654F8 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		649064BF2A65E4B5001654F8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		649064C02A65E4CD001654F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		649064C12A65E4D8001654F8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		64B9AF482A578F04004E4386 /* App */ = {
@@ -111,6 +113,7 @@
 		64B9AF572A579008004E4386 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				649064C22A65E755001654F8 /* ContentView.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649064C32A65E755001654F8 /* ContentView.swift in Sources */,
 				64F575632A56072B004F4055 /* LoveMyPetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

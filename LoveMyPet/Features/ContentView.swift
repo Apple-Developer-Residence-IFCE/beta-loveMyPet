@@ -1,40 +1,20 @@
+//
+//  ContentView.swift
+//  LoveMyPet
+//
+//  Created by userext on 17/07/23.
+//
 
 import SwiftUI
 
-struct TabItemLove: View {
+struct ContentView: View {
     var body: some View {
-        HStack {
-            Image("LoveMyPet")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-                Spacer()
-            Button(action: {
-                // Ação do botão
-                print("Botão pressionado")
-            }) {
-                Image("Calendar")
-                    .resizable()
-                    .frame(width: 40, height: 40)
-                    
-            }
-            Button(action: {
-                // Ação do botão
-                print("Botão pressionado")
-            }) {
-                Image("Vector")
-                    .resizable()
-                    .frame(width: 24, height: 24)
-                    .padding()
-            }
-        }
-        .padding(.leading, 35)
-        .padding(.trailing, 10)
-        
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct TabItemLove_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TabItemLove()
+        ContentView()
     }
 }
