@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Group 6.svg",
+      "filename" : "Dark mode.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Group 7.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Group 8.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
