@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,swift,xcode
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,swift,xcode
+# Created by https://www.toptal.com/developers/gitignore/api/macos,xcode,swift
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,xcode,swift
 
 ### macOS ###
 # General
@@ -124,11 +124,11 @@ iOSInjectionProject/
 
 ### Xcode Patch ###
 # *.xcodeproj/*
-!*.xcodeproj/project.pbxproj
+# !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,swift,xcode
+# End of https://www.toptal.com/developers/gitignore/api/macos,xcode,swift
