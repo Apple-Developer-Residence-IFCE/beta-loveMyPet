@@ -50,7 +50,7 @@ struct ModeView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ThemeView_Previews: PreviewProvider {
     static var previews: some View {
         ThemeView()
     }
