@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 @main
 struct LoveMyPetApp: App {
     var body: some Scene {
