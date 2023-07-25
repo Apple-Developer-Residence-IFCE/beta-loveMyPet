@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		640A65492A69E080001C2E21 /* Settingsview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A65482A69E080001C2E21 /* Settingsview.swift */; };
+		642CC3AF2A6B337B000AB604 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642CC3AE2A6B337B000AB604 /* SettingsViewModel.swift */; };
+		642CC3B12A6B56A5000AB604 /* 008-WeightPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642CC3B02A6B56A5000AB604 /* 008-WeightPicker.swift */; };
 		6453FA582A674845001FCF55 /* 007-Picker Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453FA572A674845001FCF55 /* 007-Picker Row.swift */; };
 		649064C32A65E755001654F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649064C22A65E755001654F8 /* ContentView.swift */; };
 		64F575632A56072B004F4055 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F575622A56072B004F4055 /* LoveMyPetApp.swift */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		640A65482A69E080001C2E21 /* Settingsview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settingsview.swift; sourceTree = "<group>"; };
+		642CC3AE2A6B337B000AB604 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		642CC3B02A6B56A5000AB604 /* 008-WeightPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "008-WeightPicker.swift"; sourceTree = "<group>"; };
 		6453FA572A674845001FCF55 /* 007-Picker Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "007-Picker Row.swift"; sourceTree = "<group>"; };
 		649064C22A65E755001654F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		64F5755F2A56072B004F4055 /* LoveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +40,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		642F36A92A707B0E00CA6D68 /* AppTheme */ = {
+			isa = PBXGroup;
+			children = (
+				642CC3AE2A6B337B000AB604 /* SettingsViewModel.swift */,
+				640A65482A69E080001C2E21 /* Settingsview.swift */,
+			);
+			path = AppTheme;
+			sourceTree = "<group>";
+		};
 		649064B02A65DECF001654F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -59,7 +72,6 @@
 				649064BE2A65E4A9001654F8 /* Modifiers */,
 				649064BD2A65E49D001654F8 /* Styles */,
 				649064BB2A65E28D001654F8 /* Components */,
-				6453FA572A674845001FCF55 /* 007-Picker Row.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -67,6 +79,8 @@
 		649064BB2A65E28D001654F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6453FA572A674845001FCF55 /* 007-Picker Row.swift */,
+				642CC3B02A6B56A5000AB604 /* 008-WeightPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -118,7 +132,7 @@
 		64B9AF572A579008004E4386 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				640A65482A69E080001C2E21 /* Settingsview.swift */,
+				642F36A92A707B0E00CA6D68 /* AppTheme */,
 				649064C22A65E755001654F8 /* ContentView.swift */,
 			);
 			path = Features;
@@ -260,6 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642CC3B12A6B56A5000AB604 /* 008-WeightPicker.swift in Sources */,
+				642CC3AF2A6B337B000AB604 /* SettingsViewModel.swift in Sources */,
 				649064C32A65E755001654F8 /* ContentView.swift in Sources */,
 				640A65492A69E080001C2E21 /* Settingsview.swift in Sources */,
 				6453FA582A674845001FCF55 /* 007-Picker Row.swift in Sources */,
