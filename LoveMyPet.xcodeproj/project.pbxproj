@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		640A65492A69E080001C2E21 /* Settingsview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A65482A69E080001C2E21 /* Settingsview.swift */; };
+		641C4C692A7074A700FE991E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C4C682A7074A700FE991E /* CoreDataStack.swift */; };
+		641C4C6C2A7074CF00FE991E /* LoveMyPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 641C4C6A2A7074CF00FE991E /* LoveMyPet.xcdatamodeld */; };
 		6453FA582A674845001FCF55 /* 007-Picker Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453FA572A674845001FCF55 /* 007-Picker Row.swift */; };
 		649064C32A65E755001654F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649064C22A65E755001654F8 /* ContentView.swift */; };
 		64E201F42A6F2E61008710B7 /* 008-WeightPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E201F32A6F2E61008710B7 /* 008-WeightPicker.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		640A65482A69E080001C2E21 /* Settingsview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settingsview.swift; sourceTree = "<group>"; };
+		641C4C682A7074A700FE991E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		641C4C6B2A7074CF00FE991E /* LoveMyPet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoveMyPet.xcdatamodel; sourceTree = "<group>"; };
 		6453FA572A674845001FCF55 /* 007-Picker Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "007-Picker Row.swift"; sourceTree = "<group>"; };
 		649064C22A65E755001654F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		64E201F32A6F2E61008710B7 /* 008-WeightPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "008-WeightPicker.swift"; sourceTree = "<group>"; };
@@ -45,6 +49,8 @@
 		649064B02A65DECF001654F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				641C4C682A7074A700FE991E /* CoreDataStack.swift */,
+				641C4C6A2A7074CF00FE991E /* LoveMyPet.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -72,9 +78,9 @@
 		649064BB2A65E28D001654F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				64E201F72A6F30B8008710B7 /* 006-Image Picker.swift */,
 				64E201F32A6F2E61008710B7 /* 008-WeightPicker.swift */,
 				6453FA572A674845001FCF55 /* 007-Picker Row.swift */,
+				64E201F72A6F30B8008710B7 /* 006-Image Picker.swift */,
 				64E201F52A6F2E70008710B7 /* 003-EmptyPetCard.swift */,
 			);
 			path = Components;
@@ -276,6 +282,8 @@
 				64E201F42A6F2E61008710B7 /* 008-WeightPicker.swift in Sources */,
 				64F575632A56072B004F4055 /* LoveMyPetApp.swift in Sources */,
 				64E201F62A6F2E70008710B7 /* 003-EmptyPetCard.swift in Sources */,
+				641C4C6C2A7074CF00FE991E /* LoveMyPet.xcdatamodeld in Sources */,
+				641C4C692A7074A700FE991E /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +482,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		641C4C6A2A7074CF00FE991E /* LoveMyPet.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				641C4C6B2A7074CF00FE991E /* LoveMyPet.xcdatamodel */,
+			);
+			currentVersion = 641C4C6B2A7074CF00FE991E /* LoveMyPet.xcdatamodel */;
+			path = LoveMyPet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 64F575572A56072B004F4055 /* Project object */;
 }

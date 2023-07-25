@@ -41,7 +41,7 @@ struct WeightPickerView: View {
                 
                     .fill(Color.gray)
                     .frame(height: 1)
-                    
+                
                 
                 
                 
