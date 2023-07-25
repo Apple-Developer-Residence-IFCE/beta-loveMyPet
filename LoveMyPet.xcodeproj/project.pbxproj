@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		640A65492A69E080001C2E21 /* Settingsview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A65482A69E080001C2E21 /* Settingsview.swift */; };
+		641E22132A6B365F0074526C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641E22122A6B365F0074526C /* CoreDataStack.swift */; };
+		641E22152A6B36AC0074526C /* 008-WeightPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641E22142A6B36AC0074526C /* 008-WeightPicker.swift */; };
+		641E22182A6F46A10074526C /* LoveMyPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 641E22162A6F46A10074526C /* LoveMyPet.xcdatamodeld */; };
 		6453FA582A674845001FCF55 /* 007-Picker Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453FA572A674845001FCF55 /* 007-Picker Row.swift */; };
 		649064C32A65E755001654F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649064C22A65E755001654F8 /* ContentView.swift */; };
 		64F575632A56072B004F4055 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F575622A56072B004F4055 /* LoveMyPetApp.swift */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		640A65482A69E080001C2E21 /* Settingsview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settingsview.swift; sourceTree = "<group>"; };
+		641E22122A6B365F0074526C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		641E22142A6B36AC0074526C /* 008-WeightPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "008-WeightPicker.swift"; path = "LoveMyPet/App/Utils/008-WeightPicker.swift"; sourceTree = SOURCE_ROOT; };
+		641E22172A6F46A10074526C /* LoveMyPet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoveMyPet.xcdatamodel; sourceTree = "<group>"; };
 		6453FA572A674845001FCF55 /* 007-Picker Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "007-Picker Row.swift"; sourceTree = "<group>"; };
 		649064C22A65E755001654F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		64F5755F2A56072B004F4055 /* LoveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +45,8 @@
 		649064B02A65DECF001654F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				641E22122A6B365F0074526C /* CoreDataStack.swift */,
+				641E22162A6F46A10074526C /* LoveMyPet.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -59,7 +67,6 @@
 				649064BE2A65E4A9001654F8 /* Modifiers */,
 				649064BD2A65E49D001654F8 /* Styles */,
 				649064BB2A65E28D001654F8 /* Components */,
-				6453FA572A674845001FCF55 /* 007-Picker Row.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -67,6 +74,8 @@
 		649064BB2A65E28D001654F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				6453FA572A674845001FCF55 /* 007-Picker Row.swift */,
+				641E22142A6B36AC0074526C /* 008-WeightPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -260,6 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				641E22152A6B36AC0074526C /* 008-WeightPicker.swift in Sources */,
+				641E22182A6F46A10074526C /* LoveMyPet.xcdatamodeld in Sources */,
+				641E22132A6B365F0074526C /* CoreDataStack.swift in Sources */,
 				649064C32A65E755001654F8 /* ContentView.swift in Sources */,
 				640A65492A69E080001C2E21 /* Settingsview.swift in Sources */,
 				6453FA582A674845001FCF55 /* 007-Picker Row.swift in Sources */,
@@ -462,6 +474,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		641E22162A6F46A10074526C /* LoveMyPet.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				641E22172A6F46A10074526C /* LoveMyPet.xcdatamodel */,
+			);
+			currentVersion = 641E22172A6F46A10074526C /* LoveMyPet.xcdatamodel */;
+			path = LoveMyPet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 64F575572A56072B004F4055 /* Project object */;
 }
