@@ -82,6 +82,8 @@
 				6453FA572A674845001FCF55 /* 007-Picker Row.swift */,
 				64E201F72A6F30B8008710B7 /* 006-Image Picker.swift */,
 				64E201F52A6F2E70008710B7 /* 003-EmptyPetCard.swift */,
+				6453FA572A674845001FCF55 /* 007-Picker Row.swift */,
+				641E22142A6B36AC0074526C /* 008-WeightPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -275,6 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				641E22152A6B36AC0074526C /* 008-WeightPicker.swift in Sources */,
+				641E22182A6F46A10074526C /* LoveMyPet.xcdatamodeld in Sources */,
+				641E22132A6B365F0074526C /* CoreDataStack.swift in Sources */,
 				649064C32A65E755001654F8 /* ContentView.swift in Sources */,
 				640A65492A69E080001C2E21 /* Settingsview.swift in Sources */,
 				64E201F82A6F30B8008710B7 /* 006-Image Picker.swift in Sources */,
