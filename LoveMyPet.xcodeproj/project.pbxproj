@@ -14,6 +14,7 @@
 		644A846F2A70875D0045CDDB /* 002-PetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644A846E2A70875D0045CDDB /* 002-PetCard.swift */; };
 		6453FA582A674845001FCF55 /* 007-Picker Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453FA572A674845001FCF55 /* 007-Picker Row.swift */; };
 		649064C32A65E755001654F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649064C22A65E755001654F8 /* ContentView.swift */; };
+		64CA1BBD2A71DAA700F57A88 /* Poppins.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64CA1BBC2A71DAA700F57A88 /* Poppins.ttf */; };
 		64E201F42A6F2E61008710B7 /* 008-WeightPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E201F32A6F2E61008710B7 /* 008-WeightPicker.swift */; };
 		64E201F62A6F2E70008710B7 /* 003-EmptyPetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E201F52A6F2E70008710B7 /* 003-EmptyPetCard.swift */; };
 		64E201F82A6F30B8008710B7 /* 006-Image Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E201F72A6F30B8008710B7 /* 006-Image Picker.swift */; };
@@ -30,6 +31,8 @@
 		644A846E2A70875D0045CDDB /* 002-PetCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "002-PetCard.swift"; sourceTree = "<group>"; };
 		6453FA572A674845001FCF55 /* 007-Picker Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "007-Picker Row.swift"; sourceTree = "<group>"; };
 		649064C22A65E755001654F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		64CA1BB92A71D3CA00F57A88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		64CA1BBC2A71DAA700F57A88 /* Poppins.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Poppins.ttf; sourceTree = "<group>"; };
 		64E201F32A6F2E61008710B7 /* 008-WeightPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "008-WeightPicker.swift"; sourceTree = "<group>"; };
 		64E201F52A6F2E70008710B7 /* 003-EmptyPetCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "003-EmptyPetCard.swift"; sourceTree = "<group>"; };
 		64E201F72A6F30B8008710B7 /* 006-Image Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "006-Image Picker.swift"; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				64F575662A56072C004F4055 /* Assets.xcassets */,
+				64CA1BBC2A71DAA700F57A88 /* Poppins.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -180,6 +184,7 @@
 		64F575612A56072B004F4055 /* LoveMyPet */ = {
 			isa = PBXGroup;
 			children = (
+				64CA1BB92A71D3CA00F57A88 /* Info.plist */,
 				64B9AF482A578F04004E4386 /* App */,
 				64B9AF572A579008004E4386 /* Features */,
 				649064B12A65DEE8001654F8 /* Services */,
@@ -258,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64F5756A2A56072C004F4055 /* Preview Assets.xcassets in Resources */,
+				64CA1BBD2A71DAA700F57A88 /* Poppins.ttf in Resources */,
 				64F575672A56072C004F4055 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +436,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LoveMyPet/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoveMyPet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -458,6 +465,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LoveMyPet/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoveMyPet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
