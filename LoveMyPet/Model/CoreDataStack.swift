@@ -16,7 +16,6 @@ class CoreDataStack {
     public static let inMemory = CoreDataStack(.inMemory)
     private static let modelName: String = "LoveMyPet"
     private var persistentContainer: NSPersistentContainer
-    
     init(_ storageType: StorageType = .persistent) {
         self.persistentContainer = NSPersistentContainer(name: CoreDataStack.modelName)
         if storageType == .inMemory {

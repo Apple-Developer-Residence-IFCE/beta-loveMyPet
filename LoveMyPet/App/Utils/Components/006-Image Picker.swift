@@ -9,13 +9,10 @@ import SwiftUI
 import PhotosUI
 
 struct ImagePicker: View {
-    
     @State private var avatarItem: PhotosPickerItem?
     @State private var avatarImage: Image?
-    
     var body: some View {
         VStack {
-            
             PhotosPicker(selection: $avatarItem, matching: .images) {
                 VStack {
                     if let avatarImage {
@@ -30,11 +27,9 @@ struct ImagePicker: View {
                             .frame(width: 70, height: 70)
                         Text("Escolher foto")
                             .foregroundColor(.black)
-                        
                     }
                 }
             }
-            
         }
         .onChange(of: avatarItem) { _ in
             Task {
@@ -46,7 +41,6 @@ struct ImagePicker: View {
                 }
             }
         }
-        
     }
 }
 
