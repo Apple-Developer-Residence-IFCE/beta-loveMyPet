@@ -1,30 +1,24 @@
 import Foundation
 import SwiftUI
 
-enum AppTheme: Int {
-    static var id: String = "Appearence"
-
-    case system = 0
+enum Appearence: Int, CaseIterable {
+    case system
     case light
     case dark
 }
 
 class SettingsViewModel: ObservableObject {
-    static var shared: SettingsViewModel = SettingsViewModel()
-
-    @AppStorage(AppTheme.id) private var theme: Int = 0
-
-    func setTheme(_ theme: AppTheme) {
-        self.theme = theme.rawValue
+    @AppStorage("appAppearence") var currentAppearence: Appearence = .system
+    func setAppearence(_ appearence: Appearence) {
+        currentAppearence = appearence
     }
-
-    func getTheme() -> AppTheme {
-        guard let currentAppearence = AppTheme(rawValue: theme)
-        else {
-            return AppTheme.system
-        }
-
-        return currentAppearence
-    }
-
 }
+     func getPreferredAppTheme(for appearence: Appearence) -> ColorScheme {
+        switch appearence {
+        case .system, .light:
+            return .light
+        case .dark:
+            return .dark
+        }
+    }
+

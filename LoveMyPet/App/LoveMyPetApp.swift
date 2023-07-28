@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+
 @main
 struct LoveMyPetApp: App {
+    @StateObject private var settingsViewModel = SettingsViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ThemeView()
+                .environmentObject(settingsViewModel)
+                
         }
     }
 }

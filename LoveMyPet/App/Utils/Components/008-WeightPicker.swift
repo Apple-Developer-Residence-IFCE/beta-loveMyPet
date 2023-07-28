@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct WeightPickerView: View {
-    @State var kg : Int = 0
-    @State var gram : Int = 0
+    @State var kg: Int = 0
+    @State var gram: Int = 0
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -27,7 +27,7 @@ struct WeightPickerView: View {
                                     .foregroundColor(.black)
                             }
                         }
-                        .frame (width: 100,height: 32)
+                        .frame(width: 100, height: 32)
                         .foregroundColor(.gray.opacity(0.10))
                         .cornerRadius(4)
                 }.padding()
@@ -54,7 +54,7 @@ struct WeightPickerView: View {
                     .frame(width: geometry.size.width / 2 + 30)
                     .labelsHidden()
                     .fixedSize(horizontal: true, vertical: true)
-                    .frame(width: geometry.size.width / 2 , height: 160)
+                    .frame(width: geometry.size.width / 2, height: 160)
                     .clipped()
                     .pickerStyle(.wheel)
                 }
