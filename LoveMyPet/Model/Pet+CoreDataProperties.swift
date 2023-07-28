@@ -16,10 +16,10 @@ extension Pet {
         return NSFetchRequest<Pet>(entityName: "Pet")
     }
 
-    @NSManaged public var age: Int16
+    @NSManaged public var age: Int
     @NSManaged public var birth: Date?
     @NSManaged public var castreted: Bool
-    @NSManaged public var gender: NSObject?
+    @NSManaged public var gender: Bool
     @NSManaged public var name: String?
     @NSManaged public var race: String?
     @NSManaged public var species: String?

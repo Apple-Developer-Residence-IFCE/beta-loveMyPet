@@ -10,6 +10,9 @@
 		640A65492A69E080001C2E21 /* Settingsview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A65482A69E080001C2E21 /* Settingsview.swift */; };
 		641C4C692A7074A700FE991E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C4C682A7074A700FE991E /* CoreDataStack.swift */; };
 		641C4C6C2A7074CF00FE991E /* LoveMyPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 641C4C6A2A7074CF00FE991E /* LoveMyPet.xcdatamodeld */; };
+		642305722A731CD10054C48C /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642305712A731CD10054C48C /* PetModel.swift */; };
+		642305792A745ABF0054C48C /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642305772A745ABF0054C48C /* Pet+CoreDataClass.swift */; };
+		6423057A2A745ABF0054C48C /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642305782A745ABF0054C48C /* Pet+CoreDataProperties.swift */; };
 		642F36AB2A7084AF00CA6D68 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F36AA2A7084AF00CA6D68 /* SettingsViewModel.swift */; };
 		6453FA582A674845001FCF55 /* 007-Picker Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453FA572A674845001FCF55 /* 007-Picker Row.swift */; };
 		649064C32A65E755001654F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649064C22A65E755001654F8 /* ContentView.swift */; };
@@ -25,6 +28,9 @@
 		640A65482A69E080001C2E21 /* Settingsview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settingsview.swift; sourceTree = "<group>"; };
 		641C4C682A7074A700FE991E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		641C4C6B2A7074CF00FE991E /* LoveMyPet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoveMyPet.xcdatamodel; sourceTree = "<group>"; };
+		642305712A731CD10054C48C /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
+		642305772A745ABF0054C48C /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pet+CoreDataClass.swift"; path = "LoveMyPet/Model/Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		642305782A745ABF0054C48C /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pet+CoreDataProperties.swift"; path = "LoveMyPet/Model/Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		642F36AA2A7084AF00CA6D68 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		6453FA572A674845001FCF55 /* 007-Picker Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "007-Picker Row.swift"; sourceTree = "<group>"; };
 		649064C22A65E755001654F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				641C4C682A7074A700FE991E /* CoreDataStack.swift */,
+				642305712A731CD10054C48C /* PetModel.swift */,
 				641C4C6A2A7074CF00FE991E /* LoveMyPet.xcdatamodeld */,
 			);
 			path = Model;
@@ -161,6 +168,8 @@
 		64F575562A56072B004F4055 = {
 			isa = PBXGroup;
 			children = (
+				642305772A745ABF0054C48C /* Pet+CoreDataClass.swift */,
+				642305782A745ABF0054C48C /* Pet+CoreDataProperties.swift */,
 				64F575612A56072B004F4055 /* LoveMyPet */,
 				64F575602A56072B004F4055 /* Products */,
 			);
@@ -288,7 +297,9 @@
 			files = (
 				649064C32A65E755001654F8 /* ContentView.swift in Sources */,
 				640A65492A69E080001C2E21 /* Settingsview.swift in Sources */,
+				6423057A2A745ABF0054C48C /* Pet+CoreDataProperties.swift in Sources */,
 				64E201F82A6F30B8008710B7 /* 006-Image Picker.swift in Sources */,
+				642305722A731CD10054C48C /* PetModel.swift in Sources */,
 				6453FA582A674845001FCF55 /* 007-Picker Row.swift in Sources */,
 				64E201F42A6F2E61008710B7 /* 008-WeightPicker.swift in Sources */,
 				642F36AB2A7084AF00CA6D68 /* SettingsViewModel.swift in Sources */,
@@ -296,6 +307,7 @@
 				64E201F62A6F2E70008710B7 /* 003-EmptyPetCard.swift in Sources */,
 				641C4C6C2A7074CF00FE991E /* LoveMyPet.xcdatamodeld in Sources */,
 				641C4C692A7074A700FE991E /* CoreDataStack.swift in Sources */,
+				642305792A745ABF0054C48C /* Pet+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
