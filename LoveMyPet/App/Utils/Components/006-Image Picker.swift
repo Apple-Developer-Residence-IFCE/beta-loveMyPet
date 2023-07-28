@@ -26,7 +26,8 @@ struct ImagePicker: View {
                     } else { Image("ImagePicker")
                             .frame(width: 70, height: 70)
                         Text("Escolher foto")
-                        .foregroundColor(.black)                    }
+                            .foregroundColor(.black)
+                    }
                 }
             }
         }

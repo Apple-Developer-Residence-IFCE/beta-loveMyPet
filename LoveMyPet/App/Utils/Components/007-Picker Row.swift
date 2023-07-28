@@ -39,7 +39,6 @@ struct PickerView: View {
     @State private var selectedGender = genderOptions[0]
     @State private var selectedSpecies = speciesOptions[0]
     @State private var selectedRace = raceOptions[0]
-    
     var body: some View {
         VStack {
             List {
@@ -54,7 +53,6 @@ struct PickerView: View {
                         Text(option.name).tag(option)
                     }
                 }
-                
                 .pickerStyle(.automatic)
                 Picker(selection: $selectedRace, label: Text("Raça")) {
                     ForEach(raceOptions, id: \.name) { option in
