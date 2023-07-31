@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum OptionsA: String, CaseIterable {
+    case masculino = "Masculino"
+}
+
 struct Options: Hashable {
     let name: String
 }

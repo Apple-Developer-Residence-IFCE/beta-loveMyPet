@@ -5,6 +5,7 @@
         <attribute name="birth" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="castreted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="gender" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="URI"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="race" optional="YES" attributeType="String"/>
         <attribute name="species" optional="YES" attributeType="String"/>
