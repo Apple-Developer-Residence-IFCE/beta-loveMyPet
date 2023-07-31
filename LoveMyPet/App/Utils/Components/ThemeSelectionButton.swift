@@ -12,17 +12,16 @@ struct ThemeButton: View {
             Image(image)
             Text(title)
             Button {
-                appearenceviewmodel.currentAppearence = Appearence(rawValue: buttonId) ?? .system
+//                appearenceviewmodel.currentAppearence = Appearence(rawValue: buttonId) ?? .system
                 action()
             } label: {
-                if appearenceviewmodel.currentAppearence.rawValue == buttonId {
+                if selectedButton == buttonId {
                     Image("Vector")
                 } else {
                     Circle()
                         .stroke(Color("principal"), lineWidth: 2)
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color.clear)
-                    
                 }
             }
         }

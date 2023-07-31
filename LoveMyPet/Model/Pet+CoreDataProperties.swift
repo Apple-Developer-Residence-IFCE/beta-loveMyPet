@@ -25,6 +25,7 @@ extension Pet {
     @NSManaged public var species: String?
     @NSManaged public var uuid: UUID?
     @NSManaged public var weight: Float
+    @NSManaged public var imagePath: URL
 
 }
 

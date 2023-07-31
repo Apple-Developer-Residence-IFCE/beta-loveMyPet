@@ -19,6 +19,8 @@ struct PetPresenter {
     var weight: Float
     var castreted: Bool
     var gender: Bool
+    var imagePath: URL
+    
     
     func saveToCoreData(context: NSManagedObjectContext) {
             let petEntity = Pet(context: context)
@@ -30,6 +32,7 @@ struct PetPresenter {
             petEntity.weight = weight
             petEntity.castreted = castreted
             petEntity.gender = gender
+            petEntity.imagePath = imagePath
             do {
                 try context.save()
             } catch let error as NSError {

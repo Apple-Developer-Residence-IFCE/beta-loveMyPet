@@ -14,7 +14,7 @@ struct LoveMyPetApp: App {
         WindowGroup {
             ThemeView()
                 .environmentObject(settingsViewModel)
-                
+            
         }
     }
 }

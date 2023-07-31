@@ -9,22 +9,21 @@ import SwiftUI
 import PhotosUI
 
 struct PetCard: View {
-    
+
     @State var petName = "Robson"
     @State var petType = "Caramelo"
     @State private var avatarImage: Image?
-    
+
     var body: some View {
         HStack {
-            
             if let avatarImage {
                 avatarImage
                     .frame(width: 70, height: 70)
-                    .cornerRadius(40)
+                    .cornerRadius(35)
             } else {
                 Image("ImagePicker")
             }
-            
+
             VStack(alignment: .leading) {
                 Text(petName)
                     .font(.title3)
