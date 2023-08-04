@@ -12,9 +12,8 @@ struct LoveMyPetApp: App {
     @StateObject private var settingsViewModel = SettingsViewModel()
     var body: some Scene {
         WindowGroup {
-            ThemeView()
+            AddPetView(isView: false)
                 .environmentObject(settingsViewModel)
-            
         }
     }
 }

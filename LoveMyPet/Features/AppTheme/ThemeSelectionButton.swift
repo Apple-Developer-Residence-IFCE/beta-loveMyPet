@@ -12,7 +12,6 @@ struct ThemeButton: View {
             Image(image)
             Text(title)
             Button {
-//                appearenceviewmodel.currentAppearence = Appearence(rawValue: buttonId) ?? .system
                 action()
             } label: {
                 if selectedButton == buttonId {

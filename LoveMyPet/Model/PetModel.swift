@@ -20,10 +20,10 @@ struct PetPresenter {
     var castreted: Bool
     var gender: Bool
     var imagePath: URL
-    
-    
+
     func saveToCoreData(context: NSManagedObjectContext) {
             let petEntity = Pet(context: context)
+            petEntity.uuid = uuid
             petEntity.name = name
             petEntity.race = race
             petEntity.birth = birth
