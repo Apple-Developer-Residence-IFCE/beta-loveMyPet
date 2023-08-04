@@ -1,10 +1,3 @@
-//
-//  002 - PetCard.swift
-//  LoveMyPet
-//
-//  Created by userext on 24/07/23.
-//
-
 import SwiftUI
 import PhotosUI
 
@@ -38,14 +31,10 @@ struct PetCard: View {
         .overlay(
             RoundedRectangle(cornerRadius: 13)
                 .stroke(lineWidth: 2)
-                .foregroundColor(.cinza)
+                .foregroundColor(Color("editPetPickerBorder"))
         )
         .padding(25)
     }
-}
-
-extension Color {
-    static let cinza = Color("editPetPickerBorder")
 }
 
 struct PetCard_Previews: PreviewProvider {

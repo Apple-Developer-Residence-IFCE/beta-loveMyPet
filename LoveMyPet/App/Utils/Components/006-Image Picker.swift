@@ -1,10 +1,3 @@
-//
-//  006-Image Picker.swift
-//  LoveMyPet
-//
-//  Created by userext on 20/07/23.
-//
-
 import SwiftUI
 import PhotosUI
 
@@ -18,15 +11,19 @@ struct ImagePicker: View {
                     if let avatarImage {
                         avatarImage
                             .resizable()
-                            .frame(width: 70, height: 70)
+                            .frame(width: 64, height: 64)
                             .scaledToFit()
-                            .cornerRadius(100)
+                            .cornerRadius(32)
                         Text("Trocar foto")
                             .foregroundColor(.black)
-                    } else { Image("ImagePicker")
-                            .frame(width: 70, height: 70)
+                            .font(.custom("Poppins", size: 13))
+                    } else {
+                        Circle()
+                            .frame(width: 64, height: 64)
+                            .foregroundColor(.gray)
                         Text("Escolher foto")
                             .foregroundColor(.black)
+                            .font(.custom("Poppins", size: 13))
                     }
                 }
             }
