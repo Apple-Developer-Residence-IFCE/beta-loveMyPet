@@ -18,6 +18,8 @@
 		6423057A2A745ABF0054C48C /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642305782A745ABF0054C48C /* Pet+CoreDataProperties.swift */; };
 		642F36AB2A7084AF00CA6D68 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F36AA2A7084AF00CA6D68 /* SettingsViewModel.swift */; };
 		642F36AE2A7087BE00CA6D68 /* ThemeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F36AD2A7087BE00CA6D68 /* ThemeSelectionButton.swift */; };
+		643395172A79B16A00775F74 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643395162A79B16A00775F74 /* ProfileView.swift */; };
+		643395192A79B37F00775F74 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643395182A79B37F00775F74 /* TabBar.swift */; };
 		644A846F2A70875D0045CDDB /* 002-PetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644A846E2A70875D0045CDDB /* 002-PetCard.swift */; };
 		6453FA582A674845001FCF55 /* 007-Picker Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6453FA572A674845001FCF55 /* 007-Picker Row.swift */; };
 		649064C32A65E755001654F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649064C22A65E755001654F8 /* ContentView.swift */; };
@@ -43,6 +45,8 @@
 		642305782A745ABF0054C48C /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Pet+CoreDataProperties.swift"; path = "LoveMyPet/Model/Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		642F36AA2A7084AF00CA6D68 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		642F36AD2A7087BE00CA6D68 /* ThemeSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionButton.swift; sourceTree = "<group>"; };
+		643395162A79B16A00775F74 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		643395182A79B37F00775F74 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		644A846E2A70875D0045CDDB /* 002-PetCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "002-PetCard.swift"; sourceTree = "<group>"; };
 		6453FA572A674845001FCF55 /* 007-Picker Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "007-Picker Row.swift"; sourceTree = "<group>"; };
 		649064C22A65E755001654F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +92,14 @@
 			path = AppTheme;
 			sourceTree = "<group>";
 		};
+		643395152A79B13200775F74 /* Profiles */ = {
+			isa = PBXGroup;
+			children = (
+				643395162A79B16A00775F74 /* ProfileView.swift */,
+			);
+			path = Profiles;
+			sourceTree = "<group>";
+		};
 		649064B02A65DECF001654F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +139,8 @@
 				64E201F52A6F2E70008710B7 /* 003-EmptyPetCard.swift */,
 				6453FA572A674845001FCF55 /* 007-Picker Row.swift */,
 				64D6D1422A732F73006266BB /* 021-ImageFileManager.swift */,
+				642F36AD2A7087BE00CA6D68 /* ThemeSelectionButton.swift */,
+				643395182A79B37F00775F74 /* TabBar.swift */,
 				641FE7142A7C53C8003CCDF3 /* WeightPickerC.swift */,
 			);
 			path = Components;
@@ -179,6 +193,7 @@
 		64B9AF572A579008004E4386 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				643395152A79B13200775F74 /* Profiles */,
 				641E7F602A7C60F80081C7E4 /* AddPet */,
 				642F36AC2A7084D200CA6D68 /* AppTheme */,
 			);
@@ -339,6 +354,8 @@
 				6453FA582A674845001FCF55 /* 007-Picker Row.swift in Sources */,
 				641FE7112A79C917003CCDF3 /* AddPetView.swift in Sources */,
 				64E201F42A6F2E61008710B7 /* 008-WeightPicker.swift in Sources */,
+				643395192A79B37F00775F74 /* TabBar.swift in Sources */,
+				643395172A79B16A00775F74 /* ProfileView.swift in Sources */,
 				642F36AB2A7084AF00CA6D68 /* SettingsViewModel.swift in Sources */,
 				64F575632A56072B004F4055 /* LoveMyPetApp.swift in Sources */,
 				64E201F62A6F2E70008710B7 /* 003-EmptyPetCard.swift in Sources */,

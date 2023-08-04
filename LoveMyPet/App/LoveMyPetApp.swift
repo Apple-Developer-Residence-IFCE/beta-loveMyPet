@@ -10,10 +10,15 @@ import SwiftUI
 @main
 struct LoveMyPetApp: App {
     @StateObject private var settingsViewModel = SettingsViewModel()
+    @State var selectedTab: Tab = .pets
     var body: some Scene {
         WindowGroup {
-            AddPetView(isView: false)
-                .environmentObject(settingsViewModel)
+            TabBar(selectedTab: $selectedTab) {
+                ThemeView()
+            } profileView: {
+                ProfileView()
+            }
+            .environmentObject(settingsViewModel)
         }
     }
 }
