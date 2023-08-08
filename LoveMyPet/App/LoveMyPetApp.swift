@@ -13,6 +13,7 @@ struct LoveMyPetApp: App {
     @State var selectedTab: Tab = .pets
     var body: some Scene {
         WindowGroup {
+            AddPetView()
             TabBar(selectedTab: $selectedTab) {
                 ThemeView()
             } profileView: {

@@ -46,39 +46,39 @@ struct PickerView: View {
     @State private var selectedRace = raceOptions[0]
     @State private var birthday = Date()
     var body: some View {
-            VStack {
-                List {
-                    TextField("Nome do pet", text: $selectedName)
-                        .listRowBackground(Color("editPetPicker"))
-                    Picker(selection: $selectedGender, label: Text("Gênero")) {
-                        ForEach(genderOptions, id: \.name) { option in
-                            Text(option.name).tag(option)
-                        }
-                    }
-                    .pickerStyle(.automatic)
+        VStack {
+            List {
+                TextField("Nome do pet", text: $selectedName)
                     .listRowBackground(Color("editPetPicker"))
-                    Picker(selection: $selectedSpecies, label: Text("Espécie")) {
-                        ForEach(speciesOptions, id: \.name) { option in
-                            Text(option.name).tag(option)
-                        }
+                Picker(selection: $selectedGender, label: Text("Gênero")) {
+                    ForEach(genderOptions, id: \.name) { option in
+                        Text(option.name).tag(option)
                     }
-                    .pickerStyle(.automatic)
-                    .listRowBackground(Color("editPetPicker"))
-                    Picker(selection: $selectedRace, label: Text("Raça")) {
-                        ForEach(raceOptions, id: \.name) { option in
-                            Text(option.name).tag(option)
-                        }
-                    }
-                    .pickerStyle(.navigationLink)
-                    .listRowBackground(Color("editPetPicker"))
-                    DatePicker("Nascimento", selection: $birthday, displayedComponents: .date)
-                        .environment(\.locale, Locale.init(identifier: "pt"))
-                        .listRowBackground(Color("editPetPicker"))
                 }
-                .background(.clear)
-                .scrollContentBackground(.hidden)
+                .pickerStyle(.automatic)
+                .listRowBackground(Color("editPetPicker"))
+                Picker(selection: $selectedSpecies, label: Text("Espécie")) {
+                    ForEach(speciesOptions, id: \.name) { option in
+                        Text(option.name).tag(option)
+                    }
+                }
+                .pickerStyle(.automatic)
+                .listRowBackground(Color("editPetPicker"))
+                Picker(selection: $selectedRace, label: Text("Raça")) {
+                    ForEach(raceOptions, id: \.name) { option in
+                        Text(option.name).tag(option)
+                    }
+                }
+                .pickerStyle(.navigationLink)
+                .listRowBackground(Color("editPetPicker"))
+                DatePicker("Nascimento", selection: $birthday, displayedComponents: .date)
+                    .environment(\.locale, Locale.init(identifier: "pt"))
+                    .listRowBackground(Color("editPetPicker"))
             }
+            .background(.clear)
+            .scrollContentBackground(.hidden)
         }
+    }
 }
 
 struct Picker_Previews: PreviewProvider {

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		640A65492A69E080001C2E21 /* Settingsview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A65482A69E080001C2E21 /* Settingsview.swift */; };
+		6418C1F32A7DCA27008EC68A /* EditPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418C1F22A7DCA27008EC68A /* EditPetView.swift */; };
+		6418C1F52A7DCA4F008EC68A /* AddPetSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418C1F42A7DCA4F008EC68A /* AddPetSheet.swift */; };
+		6418C1F72A7DCC07008EC68A /* EditPetSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418C1F62A7DCC07008EC68A /* EditPetSheet.swift */; };
+		6418C1F92A7DCF80008EC68A /* AddPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418C1F82A7DCF80008EC68A /* AddPetViewModel.swift */; };
+		6418C1FB2A7DCFC3008EC68A /* EditPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418C1FA2A7DCFC3008EC68A /* EditPetViewModel.swift */; };
 		641C4C692A7074A700FE991E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C4C682A7074A700FE991E /* CoreDataStack.swift */; };
 		641C4C6C2A7074CF00FE991E /* LoveMyPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 641C4C6A2A7074CF00FE991E /* LoveMyPet.xcdatamodeld */; };
 		641FE7112A79C917003CCDF3 /* AddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641FE7102A79C917003CCDF3 /* AddPetView.swift */; };
@@ -35,6 +40,11 @@
 
 /* Begin PBXFileReference section */
 		640A65482A69E080001C2E21 /* Settingsview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settingsview.swift; sourceTree = "<group>"; };
+		6418C1F22A7DCA27008EC68A /* EditPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetView.swift; sourceTree = "<group>"; };
+		6418C1F42A7DCA4F008EC68A /* AddPetSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetSheet.swift; sourceTree = "<group>"; };
+		6418C1F62A7DCC07008EC68A /* EditPetSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetSheet.swift; sourceTree = "<group>"; };
+		6418C1F82A7DCF80008EC68A /* AddPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewModel.swift; sourceTree = "<group>"; };
+		6418C1FA2A7DCFC3008EC68A /* EditPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetViewModel.swift; sourceTree = "<group>"; };
 		641C4C682A7074A700FE991E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		641C4C6B2A7074CF00FE991E /* LoveMyPet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoveMyPet.xcdatamodel; sourceTree = "<group>"; };
 		641FE7102A79C917003CCDF3 /* AddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetView.swift; sourceTree = "<group>"; };
@@ -73,10 +83,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6418C1F12A7DC941008EC68A /* EditPet */ = {
+			isa = PBXGroup;
+			children = (
+				6418C1F22A7DCA27008EC68A /* EditPetView.swift */,
+				6418C1F62A7DCC07008EC68A /* EditPetSheet.swift */,
+				6418C1FA2A7DCFC3008EC68A /* EditPetViewModel.swift */,
+			);
+			path = EditPet;
+			sourceTree = "<group>";
+		};
 		641E7F602A7C60F80081C7E4 /* AddPet */ = {
 			isa = PBXGroup;
 			children = (
 				641FE7102A79C917003CCDF3 /* AddPetView.swift */,
+				6418C1F42A7DCA4F008EC68A /* AddPetSheet.swift */,
+				6418C1F82A7DCF80008EC68A /* AddPetViewModel.swift */,
 			);
 			path = AddPet;
 			sourceTree = "<group>";
@@ -139,7 +161,6 @@
 				64E201F52A6F2E70008710B7 /* 003-EmptyPetCard.swift */,
 				6453FA572A674845001FCF55 /* 007-Picker Row.swift */,
 				64D6D1422A732F73006266BB /* 021-ImageFileManager.swift */,
-				642F36AD2A7087BE00CA6D68 /* ThemeSelectionButton.swift */,
 				643395182A79B37F00775F74 /* TabBar.swift */,
 				641FE7142A7C53C8003CCDF3 /* WeightPickerC.swift */,
 			);
@@ -194,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				643395152A79B13200775F74 /* Profiles */,
+				6418C1F12A7DC941008EC68A /* EditPet */,
 				641E7F602A7C60F80081C7E4 /* AddPet */,
 				642F36AC2A7084D200CA6D68 /* AppTheme */,
 			);
@@ -346,8 +368,11 @@
 				649064C32A65E755001654F8 /* ContentView.swift in Sources */,
 				640A65492A69E080001C2E21 /* Settingsview.swift in Sources */,
 				6423057A2A745ABF0054C48C /* Pet+CoreDataProperties.swift in Sources */,
+				6418C1F72A7DCC07008EC68A /* EditPetSheet.swift in Sources */,
 				64E201F82A6F30B8008710B7 /* 006-Image Picker.swift in Sources */,
 				642F36AE2A7087BE00CA6D68 /* ThemeSelectionButton.swift in Sources */,
+				6418C1FB2A7DCFC3008EC68A /* EditPetViewModel.swift in Sources */,
+				6418C1F92A7DCF80008EC68A /* AddPetViewModel.swift in Sources */,
 				642305722A731CD10054C48C /* PetModel.swift in Sources */,
 				644A846F2A70875D0045CDDB /* 002-PetCard.swift in Sources */,
 				641FE7152A7C53C8003CCDF3 /* WeightPickerC.swift in Sources */,
@@ -360,6 +385,8 @@
 				64F575632A56072B004F4055 /* LoveMyPetApp.swift in Sources */,
 				64E201F62A6F2E70008710B7 /* 003-EmptyPetCard.swift in Sources */,
 				641C4C6C2A7074CF00FE991E /* LoveMyPet.xcdatamodeld in Sources */,
+				6418C1F52A7DCA4F008EC68A /* AddPetSheet.swift in Sources */,
+				6418C1F32A7DCA27008EC68A /* EditPetView.swift in Sources */,
 				641C4C692A7074A700FE991E /* CoreDataStack.swift in Sources */,
 				64D6D1432A732F73006266BB /* 021-ImageFileManager.swift in Sources */,
 				642305792A745ABF0054C48C /* Pet+CoreDataClass.swift in Sources */,
