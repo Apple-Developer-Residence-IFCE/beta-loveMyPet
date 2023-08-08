@@ -20,23 +20,23 @@ struct PetPresenter {
     var castreted: Bool
     var gender: Bool
     var imagePath: URL
-
+    
     func saveToCoreData(context: NSManagedObjectContext) {
-            let petEntity = Pet(context: context)
-            petEntity.uuid = uuid
-            petEntity.name = name
-            petEntity.race = race
-            petEntity.birth = birth
-            petEntity.species = species
-            petEntity.age = age
-            petEntity.weight = weight
-            petEntity.castreted = castreted
-            petEntity.gender = gender
-            petEntity.imagePath = imagePath
-            do {
-                try context.save()
-            } catch let error as NSError {
-                print("Erro ao salvar pet: \(error), \(error.userInfo)")
-            }
+        let petEntity = Pet(context: context)
+        petEntity.uuid = uuid
+        petEntity.name = name
+        petEntity.race = race
+        petEntity.birth = birth
+        petEntity.species = species
+        petEntity.age = age
+        petEntity.weight = weight
+        petEntity.castreted = castreted
+        petEntity.gender = gender
+        petEntity.imagePath = imagePath
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("Erro ao salvar pet: \(error), \(error.userInfo)")
         }
+    }
 }

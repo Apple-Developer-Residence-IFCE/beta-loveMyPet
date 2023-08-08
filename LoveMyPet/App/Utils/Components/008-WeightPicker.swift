@@ -16,19 +16,21 @@ struct PickerKG: View {
         VStack {
             HStack {
                 Text("Peso")
+                    .padding(.horizontal, -15)
                 Spacer()
                 Rectangle()
                     .overlay {
                         HStack {
                             Text("\(quilo),\(grama) Kg ")
-                                .foregroundColor(.black)
+                                .foregroundColor(Color("bottons"))
                         }
                     }
                     .frame(width: 70, height: 32)
                     .foregroundColor(.gray.opacity(0.10))
                     .cornerRadius(4)
+                    .padding(.horizontal, -15)
             }
-            .padding(.top, 20)
+            .padding(.top, -20)
             .onTapGesture {isView.toggle()}
             .padding()
             HStack(spacing: 0) {
@@ -40,7 +42,6 @@ struct PickerKG: View {
                             }
                         }
                         .frame(width: 50)
-                        
                         Picker("Gramas", selection: $grama) {
                             ForEach(0..<100) {
                                 Text("\($0)")

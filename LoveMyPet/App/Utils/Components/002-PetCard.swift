@@ -11,18 +11,22 @@ struct PetCard: View {
         HStack {
             if let avatarImage {
                 avatarImage
-                    .frame(width: 70, height: 70)
-                    .cornerRadius(35)
+                    .frame(width: 64, height: 64)
+                    .cornerRadius(32)
             } else {
-                Image("ImagePicker")
+                Circle()
+                    .foregroundColor(.gray)
+                    .frame(width: 64, height: 64)
+                
             }
 
             VStack(alignment: .leading) {
                 Text(petName)
-                    .font(.title3)
+                    .font(.custom("Poppins", size: 16))
                     .bold()
                     .padding(0.3)
                 Text(petType)
+                    .font(.custom("Poppins", size: 12))
             }
             Spacer()
             Image("Seta")

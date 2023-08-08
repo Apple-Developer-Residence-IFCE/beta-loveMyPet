@@ -15,14 +15,14 @@ struct ImagePicker: View {
                             .scaledToFit()
                             .cornerRadius(32)
                         Text("Trocar foto")
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("bottons"))
                             .font(.custom("Poppins", size: 13))
                     } else {
                         Circle()
                             .frame(width: 64, height: 64)
                             .foregroundColor(.gray)
                         Text("Escolher foto")
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("bottons"))
                             .font(.custom("Poppins", size: 13))
                     }
                 }

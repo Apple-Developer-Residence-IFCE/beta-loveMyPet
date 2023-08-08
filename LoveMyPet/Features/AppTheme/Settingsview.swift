@@ -6,7 +6,7 @@ struct ThemeView: View {
             VStack(alignment: .leading) {
                 Color("background")
                     .ignoresSafeArea()
-
+                
                 Text("APARÊNCIA")
                     .bold()
                     .font(.system(size: 15))
