@@ -4,7 +4,6 @@
 //
 //  Created by userext on 05/07/23.
 //
-
 import SwiftUI
 
 @main
@@ -13,11 +12,10 @@ struct LoveMyPetApp: App {
     @State var selectedTab: Tab = .pets
     var body: some Scene {
         WindowGroup {
-            AddPetView()
             TabBar(selectedTab: $selectedTab) {
                 ThemeView()
             } profileView: {
-                ProfileView()
+                PetView()
             }
             .environmentObject(settingsViewModel)
             .preferredColorScheme(getPreferredAppTheme(for: settingsViewModel.currentAppearence))

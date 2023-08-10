@@ -10,6 +10,7 @@ struct EmptyPetCard: View {
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
         }
+        .background(Color("background"))
     }
 }
 

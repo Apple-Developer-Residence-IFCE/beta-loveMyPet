@@ -17,7 +17,6 @@ struct PetCard: View {
                 Circle()
                     .foregroundColor(.gray)
                     .frame(width: 64, height: 64)
-                
             }
 
             VStack(alignment: .leading) {

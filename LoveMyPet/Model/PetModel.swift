@@ -21,18 +21,18 @@ struct PetPresenter {
     var gender: Bool
     var imagePath: URL
     
-    func saveToCoreData(context: NSManagedObjectContext) {
-        let petEntity = Pet(context: context)
-        petEntity.uuid = uuid
-        petEntity.name = name
-        petEntity.race = race
-        petEntity.birth = birth
-        petEntity.species = species
-        petEntity.age = age
-        petEntity.weight = weight
-        petEntity.castreted = castreted
-        petEntity.gender = gender
-        petEntity.imagePath = imagePath
+    func savePet(context: NSManagedObjectContext) {
+        let newPet = Pet(context: context)
+        newPet.uuid = uuid
+        newPet.name = name
+        newPet.race = race
+        newPet.birth = birth
+        newPet.species = species
+        newPet.age = age
+        newPet.weight = weight
+        newPet.castreted = castreted
+        newPet.gender = gender
+        newPet.imagePath = imagePath
         do {
             try context.save()
         } catch let error as NSError {
