@@ -6,11 +6,10 @@ struct ThemeView: View {
             VStack(alignment: .leading) {
                 Color("background")
                     .ignoresSafeArea()
-                
                 Text("APARÊNCIA")
                     .bold()
                     .font(.system(size: 15))
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 30)
                 HStack(spacing: 30) {
                     ThemeButton(buttonId: 0,
                                 selectedButton: $themeViewModel.selectedButton,
@@ -32,11 +31,10 @@ struct ThemeView: View {
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.bottom, 350)
+                .padding(.bottom, 300)
             }
             .padding(.horizontal, 16)
             .background(Color("background"))
-            .preferredColorScheme(getPreferredAppTheme(for: themeViewModel.currentAppearence))
             .navigationTitle("Configurações")
         }
     }

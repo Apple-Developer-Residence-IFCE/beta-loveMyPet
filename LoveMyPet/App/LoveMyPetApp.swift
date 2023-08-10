@@ -18,6 +18,7 @@ struct LoveMyPetApp: App {
                 PetView()
             }
             .environmentObject(settingsViewModel)
+            .preferredColorScheme(getPreferredAppTheme(for: settingsViewModel.currentAppearence))
         }
     }
 }
