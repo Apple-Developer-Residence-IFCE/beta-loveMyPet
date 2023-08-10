@@ -20,7 +20,8 @@ struct EditPetView: View {
                 WeightPickerC()
                 Button(action: {
                     print("Cadastro excluído!")
-                }){
+                }
+                ) {
                     Text("Excluir cadastro")
                         .foregroundColor(.white)
                         .frame(width: 327, height: 48)

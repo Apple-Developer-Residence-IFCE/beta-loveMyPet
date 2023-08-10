@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct AddPetView: View {
-    @State private var showingSheet = false
-    @State var isView: Bool = false
+//    @ObservedObject var viewModel: PetViewModel
     var body: some View {
         NavigationStack {
             VStack {
@@ -25,6 +24,7 @@ struct AddPetView: View {
         }
     }
 }
+
 struct AddPetView_Previews: PreviewProvider {
     static var previews: some View {
         AddPetView()
