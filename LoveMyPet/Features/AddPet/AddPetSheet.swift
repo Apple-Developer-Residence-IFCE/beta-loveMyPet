@@ -1,13 +1,15 @@
 import SwiftUI
 
 struct AddPetSheet: View {
-    @State private var showingSheet = false
-    @State var isView: Bool = false
+    @State var showingSheet = false
     var body: some View {
         VStack {
-            Button("Mostrar Sheet") {
+            Button("Adicionar") {
                 showingSheet = true
             }
+            .foregroundColor(Color("cancel"))
+            .background(Color("background"))
+            .bold()
         }
         .sheet(isPresented: $showingSheet) {
             VStack(spacing: -22) {
