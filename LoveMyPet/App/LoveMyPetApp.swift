@@ -20,6 +20,7 @@ struct LoveMyPetApp: App {
                 ProfileView()
             }
             .environmentObject(settingsViewModel)
+            .preferredColorScheme(getPreferredAppTheme(for: settingsViewModel.currentAppearence))
         }
     }
 }

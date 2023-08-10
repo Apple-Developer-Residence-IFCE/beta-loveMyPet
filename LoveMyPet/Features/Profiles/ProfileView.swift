@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject private var themeViewModel: SettingsViewModel
     var body: some View {
         NavigationStack {
             VStack {
                 HStack {
+                    Color("background")
                 }
             }
+            //.preferredColorScheme(getPreferredAppTheme(for: themeViewModel.currentAppearence))
             .navigationTitle("Pets")
             .navigationBarTitleDisplayMode(.inline)
         }

@@ -10,7 +10,6 @@ struct TabBar<Theme: View, Profiles: View>: View {
     @Binding  var selectedTab: Tab
     @ViewBuilder let themeView: () -> Theme
     @ViewBuilder let profileView: () -> Profiles
-    
     var body: some View {
         TabView(selection: $selectedTab) {
             ProfileView()
