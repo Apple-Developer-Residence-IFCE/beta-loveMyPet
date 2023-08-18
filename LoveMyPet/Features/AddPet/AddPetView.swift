@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct AddPetView: View {
-//    @ObservedObject var viewModel: PetViewModel
+    @StateObject var viewModel = PetViewModel(stack: CoreDataStack())
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
         NavigationStack {
             VStack {
                 Spacer(minLength: 25)
                 ImagePicker()
-                PickerView()
+                PickerView(selectedName: .constant(""), selectedGender: .constant(""),
+                           selectedSpecies: .constant(""), selectedRace: .constant(""),
+                           birthday: .constant(Date.now))
                     .padding(.top, -10)
                 WeightPickerC()
                     .padding(.top, -53)
@@ -24,7 +28,6 @@ struct AddPetView: View {
         }
     }
 }
-
 struct AddPetView_Previews: PreviewProvider {
     static var previews: some View {
         AddPetView()

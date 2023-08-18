@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct PetView: View {
+    @Environment(\.managedObjectContext) var pet
+//    @ObservedObject
     @State var showingSheet = false
     var body: some View {
         NavigationStack {
             VStack {
                 Color("background")
                 EmptyPetCard()
-                    .padding(.bottom, 400)
             }
+            .padding(.bottom, 490)
             .navigationTitle("Pets")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

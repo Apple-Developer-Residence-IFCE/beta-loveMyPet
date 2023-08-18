@@ -40,11 +40,11 @@ let raceOptions = [
     Options(name: "Nenhum")]
 
 struct PickerView: View {
-    @State private var selectedName = ""
-    @State private var selectedGender = genderOptions[0]
-    @State private var selectedSpecies = speciesOptions[0]
-    @State private var selectedRace = raceOptions[0]
-    @State private var birthday = Date()
+    @Binding var selectedName: String
+    @Binding  var selectedGender: String
+    @Binding  var selectedSpecies: String
+    @Binding  var selectedRace: String
+    @Binding  var birthday: Date
     var body: some View {
         VStack {
             List {
@@ -84,7 +84,9 @@ struct PickerView: View {
 struct Picker_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            PickerView()
+            PickerView(selectedName: .constant(""), selectedGender: .constant(""),
+                       selectedSpecies: .constant(""), selectedRace: .constant(""),
+                       birthday: .constant(Date.now))
         }
     }
 }
