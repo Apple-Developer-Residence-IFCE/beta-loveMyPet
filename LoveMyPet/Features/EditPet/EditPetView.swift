@@ -15,19 +15,22 @@ struct EditPetView: View {
             VStack {
                 Spacer(minLength: 25)
                 ImagePicker()
-                PickerView()
+                PickerView(selectedName: .constant(""), selectedGender: .constant(""),
+                           selectedSpecies: .constant(""), selectedRace: .constant(""),
+                           birthday: .constant(Date.now))
                     .padding(.top, -15)
                 WeightPickerC()
                 Button(action: {
                     print("Cadastro excluído!")
                 }
-                ) {
+                )
+                {
                     Text("Excluir cadastro")
                         .foregroundColor(.white)
                         .frame(width: 327, height: 48)
                         .background(Color("delete"))
                         .cornerRadius(10)
-                        .padding(.bottom, 20)
+                        .padding(.bottom, 30)
                 }
             }
             .background(Color("background"))

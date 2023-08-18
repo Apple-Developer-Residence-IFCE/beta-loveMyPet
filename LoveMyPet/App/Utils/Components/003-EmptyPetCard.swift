@@ -2,15 +2,19 @@ import SwiftUI
 
 struct EmptyPetCard: View {
     var body: some View {
-        VStack(spacing: 0) {
+        VStack {
             Image("EmptyPetCard")
                 .padding(20)
-            Text("Você não possui nenhum \n pet cadastrado :(")
-                .font(.custom("Poppins", size: 18))
+                Text("Você não possui nenhum ")
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
-        }
-        .background(Color("background"))
+                .font(.custom("Poppins", size: 18))
+                Text("pet cadastrado :(")
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+                .font(.custom("Poppins", size: 18))
+            }
+            .background(Color("background"))
     }
 }
 
