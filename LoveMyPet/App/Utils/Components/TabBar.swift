@@ -12,7 +12,7 @@ struct TabBar<Theme: View, Profiles: View>: View {
     @ViewBuilder let profileView: () -> Profiles
     var body: some View {
         TabView(selection: $selectedTab) {
-            PetView()
+            PetView(viewM: PetViewModel(stack: .shared))
                 .tabItem {
                     Label {
                         Text(Tab.pets.rawValue)
@@ -52,7 +52,7 @@ struct TabBar_Previews: PreviewProvider {
             ThemeView()
         },
                profileView: {
-            PetView()
+            PetView(viewM: PetViewModel(stack: .shared))
         })
         .environmentObject(SettingsViewModel())
     }
