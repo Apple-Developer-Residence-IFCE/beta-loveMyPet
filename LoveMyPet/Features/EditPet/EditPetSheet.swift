@@ -2,7 +2,6 @@ import SwiftUI
 
 struct EditPetSheet: View {
     @State private var showingSheet = false
-    @State var isView: Bool = false
     var body: some View {
         VStack {
             Button("Mostrar Sheet") {

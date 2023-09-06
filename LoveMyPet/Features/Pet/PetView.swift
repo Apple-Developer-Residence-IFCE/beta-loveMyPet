@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct PetView: View {
-    @Environment(\.managedObjectContext) var pet
-//    @ObservedObject
-    @State var showingSheet = false
+    @StateObject var viewM: PetViewModel
+//    @State var showingSheet = false
     var body: some View {
         NavigationStack {
             VStack {
                 Color("background")
-                EmptyPetCard()
+                if viewM.savedPets.isEmpty {
+                    EmptyPetCard()
+                } else {
+                    List {
+//                        ForEach(viewM.savedPets, id: \.self) { pet in
+//                            VStack { PetCard(
+//                                }
+//                        }
+                    }
+                }
             }
             .padding(.bottom, 490)
             .navigationTitle("Pets")
@@ -23,7 +31,7 @@ struct PetView: View {
             .toolbar {
                 ToolbarItemGroup(placement:
                         .navigationBarTrailing) {
-                            AddPetSheet()
+                            PetSheet()
                         }
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("background"))
@@ -32,6 +40,6 @@ struct PetView: View {
 }
 struct PetView_Previews: PreviewProvider {
     static var previews: some View {
-        PetView()
+        PetView(viewM: PetViewModel(stack: .shared))
     }
 }

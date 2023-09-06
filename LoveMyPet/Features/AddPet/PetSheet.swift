@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AddPetSheet: View {
+struct PetSheet: View {
     @State var showingSheet = false
     var body: some View {
         VStack {
@@ -38,15 +38,15 @@ struct AddPetSheet: View {
                     .frame(width: 400, height: 0.5)
                     .foregroundColor(.gray)
                     .padding(.top, -23)
-                AddPetView()
+                AddPetView(viewModel: PetViewModel(stack: .shared))
             }
         }
         .background(Color("editPetPicker"))
     }
 }
 
-struct AddPetSheet_Previews: PreviewProvider {
+struct PetSheet_Previews: PreviewProvider {
     static var previews: some View {
-        AddPetSheet()
+        PetSheet()
     }
 }

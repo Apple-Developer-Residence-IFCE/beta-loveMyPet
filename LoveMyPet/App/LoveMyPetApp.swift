@@ -15,7 +15,7 @@ struct LoveMyPetApp: App {
             TabBar(selectedTab: $selectedTab) {
                 ThemeView()
             } profileView: {
-                PetView()
+                PetView(viewM: PetViewModel(stack: .shared))
             }
             .environmentObject(settingsViewModel)
             .preferredColorScheme(getPreferredAppTheme(for: settingsViewModel.currentAppearence))

@@ -12,23 +12,14 @@ struct ThemeView: View {
                     .padding(.bottom, 30)
                 HStack(spacing: 30) {
                     ThemeButton(buttonId: 0,
-                                selectedButton: $themeViewModel.selectedButton,
-                                image: "system",
-                                title: "Sistema") {
-                        themeViewModel.setAppearence(.system)
-                    }
+                                selectedButton: $themeViewModel.selectedButton, image: "system",
+                                title: "Sistema") {themeViewModel.setAppearence(.system)}
                     ThemeButton(buttonId: 1,
-                                selectedButton: $themeViewModel.selectedButton,
-                                image: "light",
-                                title: "Claro") {
-                        themeViewModel.setAppearence(.light)
-                    }
+                                selectedButton: $themeViewModel.selectedButton, image: "light",
+                                title: "Claro") {themeViewModel.setAppearence(.light)}
                     ThemeButton(buttonId: 2,
-                                selectedButton: $themeViewModel.selectedButton,
-                                image: "dark",
-                                title: "Escuro") {
-                        themeViewModel.setAppearence(.dark)
-                    }
+                                selectedButton: $themeViewModel.selectedButton, image: "dark",
+                                title: "Escuro") {themeViewModel.setAppearence(.dark)}
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.bottom, 300)

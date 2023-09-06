@@ -6,80 +6,48 @@
 //
 import Foundation
 import CoreData
-class CoreDataStack {
-    public static let shared = CoreDataStack()
+
+struct CoreDataStack {
+    static let shared = CoreDataStack()
+    let persistentContainer: NSPersistentContainer
+    
     var viewContext: NSManagedObjectContext {
-        return persistentContainer.viewContext
+        persistentContainer.viewContext
     }
-    func save() {
-        do {
-            try viewContext.save()
-            
-        } catch {
-            viewContext.rollback()
-            print(error.localizedDescription)
+    func saveData() {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror)")
+            }
         }
     }
-    let persistentContainer: NSPersistentContainer
-    init() {
-        persistentContainer = NSPersistentContainer(name: "LoveMyPet")
+    init(inMemory: Bool = false) {
+        persistentContainer = NSPersistentContainer(name: "PetModel")
+        if inMemory {
+            persistentContainer.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        }
         persistentContainer.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 print("CoreDataStack Error - Unresolved error \(error), \(error.userInfo)")
             }
         }
     }
+    func saveContext() -> Bool {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+                return true
+            } catch {
+                let nsError = error as NSError
+                return false
+            }
+        } else {
+            return false
+        }
+    }
 }
-
-
-// enum StorageType {
-//    case persistent, inMemory
-// }
-
-// class CoreDataStack {
-//    public static let shared = CoreDataStack(.persistent)
-//    public static let inMemory = CoreDataStack(.inMemory)
-//    private static let modelName: String = "LoveMyPet"
-//    private var persistentContainer: NSPersistentContainer
-//    init(_ storageType: StorageType = .persistent) {
-//        self.persistentContainer = NSPersistentContainer(name: CoreDataStack.modelName)
-//        if storageType == .inMemory {
-//            let description = NSPersistentStoreDescription()
-//            description.type = NSInMemoryStoreType
-//            self.persistentContainer.persistentStoreDescriptions = [description]
-//        }
-//        self.persistentContainer.loadPersistentStores { (storeDescription, error) in
-//            if let error = error as NSError? {
-//                print("CoreDataStack Error - Unresolved error (error), (error.userInfo)")
-//            }
-//        }
-//        var context: NSManagedObjectContext = {
-//            return self.persistentContainer.viewContext
-//        }()
-//        func save() {
-//            let context = persistentContainer.viewContext
-//            if context.hasChanges {
-//                do {
-//                    try context.save()
-//                } catch {
-//                    let nserror = error as NSError
-//                    fatalError("Unresolved error (nserror)")
-//                }
-//            }
-//        }
-//    }
-// }
-//    func saveEdit() {
-//        let context = persistentContainer.viewContext
-//        if context.hasChanges {
-//            do {
-//                try context.save()
-//            } catch {
-//                let nserror = error as NSError
-//                fatalError("Unresolved error \(nserror)")
-//            }
-//        }
-//    }
-//            let description = NSPersistentStoreDescription()
-//            description.type = NSInMemoryStoreType
-//            self.persistentContainer.persistentStoreDescriptions = [description]

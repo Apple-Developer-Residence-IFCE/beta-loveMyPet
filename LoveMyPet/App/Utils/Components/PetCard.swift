@@ -3,8 +3,8 @@ import PhotosUI
 
 struct PetCard: View {
 
-    @State var petName = "Robson"
-    @State var petType = "Caramelo"
+    @State var petName = ""
+    @State var petType = ""
     @State private var avatarImage: Image?
 
     var body: some View {
@@ -42,6 +42,6 @@ struct PetCard: View {
 
 struct PetCard_Previews: PreviewProvider {
     static var previews: some View {
-        PetCard()
+        PetCard(petName: "Bidu")
     }
 }

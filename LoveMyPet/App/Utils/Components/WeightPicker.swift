@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct PickerKG: View {
-    @State  var quilo = 1
+    @ObservedObject var viewM: PetViewModel
+   // @State var weight2 = quilo + grama
+    @State var quilo = 1
     @State var grama = 1
     @Binding var isView: Bool
     let numbers = Array(0...100)
@@ -21,7 +23,7 @@ struct PickerKG: View {
                 Rectangle()
                     .overlay {
                         HStack {
-                            Text("\(quilo),\(grama) Kg ")
+                            Text("\(quilo),\(grama) kg ")
                                 .foregroundColor(Color("bottons"))
                         }
                     }
@@ -72,6 +74,6 @@ struct PickerKG: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        PickerKG(isView: .constant(true))
+        PickerKG(viewM: PetViewModel(stack: .shared), isView: .constant(true))
     }
 }
