@@ -16,7 +16,7 @@
 		641C4C692A7074A700FE991E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641C4C682A7074A700FE991E /* CoreDataStack.swift */; };
 		641FE7112A79C917003CCDF3 /* AddPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641FE7102A79C917003CCDF3 /* AddPetView.swift */; };
 		641FE7132A7AEB5E003CCDF3 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 641FE7122A7AEB4E003CCDF3 /* Poppins-Bold.ttf */; };
-		641FE7152A7C53C8003CCDF3 /* WeightPickerC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641FE7142A7C53C8003CCDF3 /* WeightPickerC.swift */; };
+		641FE7152A7C53C8003CCDF3 /* ExtraPickers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641FE7142A7C53C8003CCDF3 /* ExtraPickers.swift */; };
 		642305722A731CD10054C48C /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642305712A731CD10054C48C /* PetModel.swift */; };
 		642F36AB2A7084AF00CA6D68 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F36AA2A7084AF00CA6D68 /* SettingsViewModel.swift */; };
 		642F36AE2A7087BE00CA6D68 /* ThemeSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F36AD2A7087BE00CA6D68 /* ThemeSelectionButton.swift */; };
@@ -49,7 +49,7 @@
 		641C4C682A7074A700FE991E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		641FE7102A79C917003CCDF3 /* AddPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetView.swift; sourceTree = "<group>"; };
 		641FE7122A7AEB4E003CCDF3 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
-		641FE7142A7C53C8003CCDF3 /* WeightPickerC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightPickerC.swift; sourceTree = "<group>"; };
+		641FE7142A7C53C8003CCDF3 /* ExtraPickers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraPickers.swift; sourceTree = "<group>"; };
 		642305712A731CD10054C48C /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
 		642F36AA2A7084AF00CA6D68 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		642F36AD2A7087BE00CA6D68 /* ThemeSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionButton.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 				6453FA572A674845001FCF55 /* PickerRow.swift */,
 				64D6D1422A732F73006266BB /* ImageFileManager.swift */,
 				643395182A79B37F00775F74 /* TabBar.swift */,
-				641FE7142A7C53C8003CCDF3 /* WeightPickerC.swift */,
+				641FE7142A7C53C8003CCDF3 /* ExtraPickers.swift */,
 				64F00F832AA1468E0000C9A1 /* Pickers.swift */,
 			);
 			path = Components;
@@ -210,7 +210,7 @@
 		64B9AF572A579008004E4386 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				64E73FA92A843ECF0027704B /* Pet */,
+				64E73FA92A843ECF0027704B /* HomePet */,
 				6418C1F12A7DC941008EC68A /* EditPet */,
 				641E7F602A7C60F80081C7E4 /* AddPet */,
 				642F36AC2A7084D200CA6D68 /* AppTheme */,
@@ -228,13 +228,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		64E73FA92A843ECF0027704B /* Pet */ = {
+		64E73FA92A843ECF0027704B /* HomePet */ = {
 			isa = PBXGroup;
 			children = (
 				64E73FAA2A843EEF0027704B /* PetView.swift */,
 				648D3A992A86E12E00FFD0FD /* PetViewModel.swift */,
 			);
-			path = Pet;
+			path = HomePet;
 			sourceTree = "<group>";
 		};
 		64F575562A56072B004F4055 = {
@@ -377,7 +377,7 @@
 				64F00F842AA1468E0000C9A1 /* Pickers.swift in Sources */,
 				642305722A731CD10054C48C /* PetModel.swift in Sources */,
 				644A846F2A70875D0045CDDB /* PetCard.swift in Sources */,
-				641FE7152A7C53C8003CCDF3 /* WeightPickerC.swift in Sources */,
+				641FE7152A7C53C8003CCDF3 /* ExtraPickers.swift in Sources */,
 				64F00F862AA163220000C9A1 /* MyPetSheet.swift in Sources */,
 				64E73FAB2A843EEF0027704B /* PetView.swift in Sources */,
 				6453FA582A674845001FCF55 /* PickerRow.swift in Sources */,

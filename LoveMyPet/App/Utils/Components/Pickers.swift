@@ -44,20 +44,21 @@ struct Pickers<Op>: View where Op: Hashable {
 }
 
 struct PickerText: View {
-    var textInput: String
+    var textInput: String = "Nome do Pet"
     @Binding var petName: String
     var body: some View {
         TextField(textInput, text: $petName)
             .padding(.vertical, 4)
     }
 }
-    struct Pickers_Previews: PreviewProvider {
-        static var previews: some View {
-            VStack {
-                Pickers(title: "Gênero", selectedValue: .constant(""), options: ["Nenhum", "Macho", "Fêmea"])
-                Pickers(title: "Especie", selectedValue: .constant(""), options: ["Nenhum", "Macho", "Fêmea"])
-                Pickers(title: "Gênero", selectedValue: .constant(""), options: ["Nenhum", "Macho", "Fêmea"])
-                PickerText(textInput: "Teste123", petName: .constant(""))
+
+struct Pickers_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            Pickers(title: "Gênero", selectedValue: .constant(""), options: ["Nenhum", "Macho", "Fêmea"])
+            Pickers(title: "Especie", selectedValue: .constant(""), options: ["Nenhum", "Macho", "Fêmea"])
+            Pickers(title: "Gênero", selectedValue: .constant(""), options: ["Nenhum", "Macho", "Fêmea"])
+            PickerText(textInput: "Teste123", petName: .constant(""))
         }
     }
 }

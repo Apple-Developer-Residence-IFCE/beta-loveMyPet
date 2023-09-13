@@ -12,17 +12,28 @@ struct AddPetView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                
                 ImagePicker()
+                    .padding(.top, 20)
                 List {
+                    PickerText(textInput: "Nome do Pet", petName: $viewModel.name)
+                        .listRowBackground(Color("editPetPicker"))
                     Pickers(title: "Gênero", selectedValue: $viewModel.gender, options: GenderModel.allCases)
+                        .listRowBackground(Color("editPetPicker"))
                     Pickers(title: "Espécie", selectedValue: $viewModel.species, options: Species.allCases)
-                    Pickers(title: "Raça", selectedValue: $viewModel.gender, options: GenderModel.allCases)
+                        .listRowBackground(Color("editPetPicker"))
+                    Pickers(title: "Raça", selectedValue: $viewModel.race, options: viewModel.availableRaces)
+                        .listRowBackground(Color("editPetPicker"));
+                    DatePicker("Nascimento", selection: $viewModel.age, displayedComponents: .date)
+                        .environment(\.locale, Locale.init(identifier: "pt"))
+                        .listRowBackground(Color("editPetPicker"))
                 }
-                .background(Color("background"))
-                .background(.clear)
+                ExtraPickers(viewM: PetViewModel(stack: .shared))
+                .padding(.top, -35)
+
             }
-            WeightPickerC(viewM: PetViewModel(stack: .shared))
+            .background(Color("background"))
+            .background(.clear)
+            .scrollContentBackground(.hidden)
         }
     }
 }
