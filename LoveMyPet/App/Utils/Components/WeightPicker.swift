@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PickerKG: View {
     @ObservedObject var viewM: PetViewModel
-   // @State var weight2 = quilo + grama
     @State var quilo = 1
     @State var grama = 1
     @Binding var isView: Bool
@@ -45,7 +44,7 @@ struct PickerKG: View {
                         }
                         .frame(width: 50)
                         Picker("Gramas", selection: $grama) {
-                            ForEach(0..<100) {
+                            ForEach(0..<10) {
                                 Text("\($0)")
                             }
                         }
@@ -58,7 +57,7 @@ struct PickerKG: View {
                     .labelsHidden()
                     .fixedSize(horizontal: true, vertical: true)
                     .clipped()
-                    .pickerStyle(.wheel)
+                    .pickerStyle(WheelPickerStyle())
                 }
             }
             .padding(.top, -85)
@@ -68,11 +67,19 @@ struct PickerKG: View {
                         .padding(.top, -50)
                 }
             }
+            
+        }
+        .onChange(of: quilo) { _ in
+            viewM.setWeight(kg: quilo, gramas: grama)
+        }
+        .onChange(of: grama) { _ in
+            viewM.setWeight(kg: quilo, gramas: grama)
         }
     }
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
+    
     static var previews: some View {
         PickerKG(viewM: PetViewModel(stack: .shared), isView: .constant(true))
     }

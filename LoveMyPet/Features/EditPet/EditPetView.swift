@@ -17,7 +17,7 @@ struct EditPetView: View {
                 ImagePicker()
                 PickerView()
                     .padding(.top, -15)
-                WeightPickerC(viewM: PetViewModel(stack: .shared))
+                ExtraPickers(viewM: PetViewModel(stack: .shared))
                 Button(action: {
                     print("Cadastro excluído!")
                 }

@@ -24,7 +24,7 @@ let castratedOptions = [
     Options(name: "Não"),
     Options(name: "Sim")]
 
-struct WeightPickerC: View {
+struct ExtraPickers: View {
     @ObservedObject var viewM: PetViewModel
     @State private var castratedop = castratedOptions[0]
     @State var kilo: Int = 0
@@ -36,7 +36,7 @@ struct WeightPickerC: View {
                 PickerKG(viewM: PetViewModel(stack: .shared), isView: $isView)
                     .listRowBackground(Color("editPetPicker"))
                     .padding(.bottom, -30)
-                Picker(selection: $castratedop, label: Text("Castrado(a)?")) {
+                Picker(selection: $viewM.castrated, label: Text("Castrado(a)?")) {
                     ForEach(castratedOptions, id: \.name) { option in
                         Text(option.name).tag(option)
                     }
@@ -44,14 +44,14 @@ struct WeightPickerC: View {
                 .pickerStyle(.automatic)
                 .listRowBackground(Color("editPetPicker"))
             }
-            .background(.clear)
+            .background(Color("background"))
             .scrollContentBackground(.hidden)
         }
     }
 }
 
-struct WeightPicker2_Previews: PreviewProvider {
+struct ExtraPickers_Previews: PreviewProvider {
     static var previews: some View {
-        WeightPickerC(viewM: PetViewModel(stack: .shared))
+        ExtraPickers(viewM: PetViewModel(stack: .shared))
     }
 }
