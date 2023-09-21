@@ -9,8 +9,8 @@ import SwiftUI
 
 struct PickerKG: View {
     @ObservedObject var viewM: PetViewModel
-    @State var quilo = 1
-    @State var grama = 1
+    @State var quilo = 0
+    @State var grama = 0
     @Binding var isView: Bool
     let numbers = Array(0...100)
     var body: some View {
@@ -67,19 +67,17 @@ struct PickerKG: View {
                         .padding(.top, -50)
                 }
             }
-            
         }
         .onChange(of: quilo) { _ in
-            viewM.setWeight(kg: quilo, gramas: grama)
+            viewM.setWeight(kgramas: quilo, gramas: grama)
         }
         .onChange(of: grama) { _ in
-            viewM.setWeight(kg: quilo, gramas: grama)
+            viewM.setWeight(kgramas: quilo, gramas: grama)
         }
     }
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
-    
     static var previews: some View {
         PickerKG(viewM: PetViewModel(stack: .shared), isView: .constant(true))
     }

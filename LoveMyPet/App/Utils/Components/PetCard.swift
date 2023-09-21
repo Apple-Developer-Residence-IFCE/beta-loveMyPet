@@ -2,9 +2,8 @@ import SwiftUI
 import PhotosUI
 
 struct PetCard: View {
-
-    @State var petName = ""
-    @State var petType = ""
+    @State var petName: String
+    @State var petType: String
     @State private var avatarImage: Image?
 
     var body: some View {
@@ -29,19 +28,25 @@ struct PetCard: View {
             }
             Spacer()
             Image("Seta")
+                .resizable()
+                .frame(width: 30, height: 30)
         }
-        .padding(20)
+        .padding(.vertical, 17)
+        .padding(.horizontal, 15)
         .overlay(
             RoundedRectangle(cornerRadius: 13)
-                .stroke(lineWidth: 2)
-                .foregroundColor(Color("editPetPickerBorder"))
+                .stroke(lineWidth: 4)
+                .foregroundColor(Color("petCardBorder"))
         )
-        .padding(25)
+        .background(Color("petCard"))
+        .clipShape(RoundedRectangle(cornerRadius: 13))
+        .padding(.horizontal)
+        .padding(.vertical, 5)
     }
 }
 
 struct PetCard_Previews: PreviewProvider {
     static var previews: some View {
-        PetCard(petName: "Bidu")
+        PetCard(petName: "Bidu", petType: "Cachorro")
     }
 }

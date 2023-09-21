@@ -10,7 +10,6 @@ import SwiftUI
 enum IsCastrated: String, Codable, CaseIterable {
     case yes = "Sim"
     case isNot = "Não"
-    
     var description: Bool {
         switch self {
         case .yes:
@@ -20,13 +19,9 @@ enum IsCastrated: String, Codable, CaseIterable {
         }
     }
 }
-let castratedOptions = [
-    Options(name: "Não"),
-    Options(name: "Sim")]
 
 struct ExtraPickers: View {
     @ObservedObject var viewM: PetViewModel
-    @State private var castratedop = castratedOptions[0]
     @State var kilo: Int = 0
     @State var gram: Int = 0
     @State var isView: Bool = false
@@ -37,8 +32,8 @@ struct ExtraPickers: View {
                     .listRowBackground(Color("editPetPicker"))
                     .padding(.bottom, -30)
                 Picker(selection: $viewM.castrated, label: Text("Castrado(a)?")) {
-                    ForEach(castratedOptions, id: \.name) { option in
-                        Text(option.name).tag(option)
+                    ForEach(IsCastrated.allCases, id: \.self) { castratedCase in
+                        Text(castratedCase.rawValue).tag(castratedCase)
                     }
                 }
                 .pickerStyle(.automatic)

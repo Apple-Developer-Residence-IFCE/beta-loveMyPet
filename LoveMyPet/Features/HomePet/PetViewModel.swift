@@ -10,7 +10,7 @@ import CoreData
 
 class PetViewModel: ObservableObject {
     let stack: CoreDataStack
-    var editPet: Pet?
+    private var editPet: Pet?
     @Published var savedPets: [Pet] = []
     @Published var name: String = ""
     @Published var gender: GenderModel = GenderModel.none
@@ -18,11 +18,11 @@ class PetViewModel: ObservableObject {
     @Published var age: Date = Date()
     @Published var weight: Double = 0.0
     @Published var image: URL? = URL(string: "")
-    @Published var castrated: Bool = false
+    @Published var castrated: IsCastrated = .isNot
     @Published var availableRaces: [Race] = [.naoEsc]
     @Published var quilos: Int = 0
     @Published var grama: Int = 0
-    @Published var species: Species = .none {
+    @Published var species: Species = .naoEsc {
         didSet {
             availableRaces = racesForSpecies(species)
             race = .naoEsc
@@ -30,49 +30,37 @@ class PetViewModel: ObservableObject {
     }
     init(stack: CoreDataStack, editPet: Pet? = nil) {
         self.stack = stack
+        self.editPet = editPet
     }
-    func setWeight(kg: Int, gramas: Int) -> Double {
-        let x = Double(kg) + Double(gramas) / 10.0
-        weight = x
-        return weight
+    func setWeight(kgramas: Int, gramas: Int) -> Double {
+        let peso = Double(kgramas) + Double(gramas) / 10.0
+        weight = peso
+        return peso
     }
     func racesForSpecies(_ especie: Species) -> [Race] {
         switch especie {
+        case .naoEsc:
+            return [.naoEsc]
         case .cat:
-            return [.siamese, .persian, .maineCoon, .sphinx, .ragdoll, .britishShorthair, .bengal, .other]
+            return [.naoEsc, .siamese, .persian, .maineCoon, .sphinx, .ragdoll, .britishShorthair, .bengal, .other]
         case .dog:
-            return [.poodle, .labrador, .beagle, .bulldog, .germanShepherd, .goldenRetriever, .dachshund, .siberianHusky, .other]
+            return [.naoEsc, .poodle, .labrador, .beagle, .bulldog, .germanShepherd, .goldenRetriever, .dachshund, .siberianHusky, .other]
         case .bird:
-            return [.papagaio, .canario, .pardal, .calopsita, .agapornis, .cockatiel, .periquitoAustraliano, .agapornis, .other]
+            return [.naoEsc, .papagaio, .canario, .pardal, .calopsita, .agapornis, .cockatiel, .periquitoAustraliano, .agapornis, .other]
         case .rabit:
-            return [.hollandLop, .lopEared, .angora, .rex, .californian, .flemishGiant, .lionhead, .netherlandDwarf, .other]
+            return [.naoEsc, .hollandLop, .lopEared, .angora, .rex, .californian, .flemishGiant, .lionhead, .netherlandDwarf, .other]
         case .hamster:
-            return [.syrian, .dwarf, .roborovski, .campbellRussian, .chinese, .russian, .teddyBear, .angoran, .other]
+            return [.naoEsc, .syrian, .dwarf, .roborovski, .campbellRussian, .chinese, .russian, .teddyBear, .angoran, .other]
         case .turtle:
-            return [.tartarugaDeOrelhaVermelha, .tartarugaDeCaixa, .tartarugaPintada, .tartarugaLeopardo, .tartarugaMordedora, .tartarugaSulcata, .tartarugaAfricana, .tartarugaAgrionemys, .other]
+            return [.naoEsc, .tartarugaDeOrelhaVermelha, .tartarugaLeopardo, .tartarugaMordedora,
+                    .tartarugaSulcata, .tartarugaAfricana, .tartarugaAgrionemys, .other]
         case .horse:
-            return [.puroSangue, .quartoDeMilha, .clydesdale, .andalusian, .appaloosa, .morgan, .saddlebred, .fjord, .other]
+            return [.naoEsc, .puroSangue, .quartoDeMilha, .clydesdale, .andalusian, .appaloosa, .morgan, .saddlebred, .fjord, .other]
         default:
             return []
         }
     }
-    
-    func savePet() {
-        let newPet = Pet(context: stack.viewContext)
-        newPet.name = name
-        newPet.race = race.rawValue
-        newPet.species = species.description
-        newPet.age = age
-        newPet.weight = weight
-        newPet.castrated = castrated
-        newPet.gender = gender.description
-        newPet.image = image
-        do {
-            try stack.viewContext.save()
-        } catch let error as NSError {
-            print("Erro ao salvar pet: \(error), \(error.userInfo)")
-        }
-    }
+
     func delete() {
         do {
             if let editPet = editPet {
@@ -81,14 +69,25 @@ class PetViewModel: ObservableObject {
                     try stack.viewContext.save()
                     print("Pet deletado")
                 } catch {
-                    print("Error ao salvar depois da deleção \(error)")
-                }
-            }
-            else {
+                    print("Error ao salvar depois da deleção \(error)") }
+            } else {
                 print("error")
             }
         }
     }
+    
+    func pickerClear () {
+        name = ""
+        species = Species.naoEsc
+        race = Race.naoEsc
+        weight = 0.0
+        castrated = IsCastrated.isNot
+        gender = GenderModel.none
+        DispatchQueue.main.async {
+            self.age = Date()
+        }
+    }
+    
     func save() {
         var pet: Pet
         if let editPet = editPet {
@@ -100,15 +99,24 @@ class PetViewModel: ObservableObject {
         pet.name = name
         pet.species = species.description
         pet.age = age
-        pet.race = race.rawValue
+        pet.race = race.description
         pet.weight = weight
         pet.image = image
-        pet.castrated = castrated
+        pet.castrated = castrated.description
         pet.gender = gender.description
         do {
             try stack.viewContext.save()
         } catch {
             print("Error para salvar o pet: \(error)")
+        }
+    }
+
+    func fetchPets() {
+        let request = NSFetchRequest<Pet>(entityName: "Pet")
+        do {
+            savedPets = try stack.viewContext.fetch(request)
+        } catch let error {
+            print("error fetching. \(error)")
         }
     }
 }

@@ -8,38 +8,51 @@
 import SwiftUI
 
 struct PetView: View {
-    @StateObject var viewM: PetViewModel
-//    @State var showingSheet = false
+    @StateObject var viewM = PetViewModel(stack: CoreDataStack.shared)
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
-                Color("background")
                 if viewM.savedPets.isEmpty {
                     EmptyPetCard()
+                        .padding(.bottom, 490)
                 } else {
-                    List {
-//                        ForEach(viewM.savedPets, id: \.self) { pet in
-//                            VStack { PetCard(
-//                                }
-//                        }
+                    ScrollView(.vertical, showsIndicators: false) {
+                        ForEach(viewM.savedPets, id: \.id) { pet in
+                            PetCard(petName: pet.name ?? "", petType: pet.race ?? "" )
+                                .padding(.horizontal, 15)
+                        }
+                        .padding(.vertical, 30)
+                        .listRowBackground(Color("background"))
                     }
+                
                 }
             }
-            .padding(.bottom, 490)
+            .onAppear {
+                viewM.fetchPets()
+                viewM.pickerClear()
+            }
             .navigationTitle("Pets")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItemGroup(placement:
-                        .navigationBarTrailing) {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
                             PetSheet()
+                                .environmentObject(viewM)
                         }
-            }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color("background"))
+            }
+            .frame(maxWidth: .infinity)
+            .background(Color("background"))
         }
     }
 }
 struct PetView_Previews: PreviewProvider {
     static var previews: some View {
-        PetView(viewM: PetViewModel(stack: .shared))
+        PetView()
     }
 }
+//                Color("background")
+// .scrollContentBackground(.hidden)
+//            .safeAreaInset(edge: .top, alignment: .trailing, spacing: nil) {
+//                Text("")
+//                    .frame(maxWidth: .infinity)
+//                    .background(Color("background"))
+//            }
