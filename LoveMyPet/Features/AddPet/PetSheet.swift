@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct PetSheet: View {
+    @EnvironmentObject private var viewM: PetViewModel
     @State var showingSheet = false
     var body: some View {
         VStack {
@@ -8,7 +9,6 @@ struct PetSheet: View {
                 showingSheet = true
             }
             .foregroundColor(Color("cancel"))
-            .background(Color("background"))
             .bold()
         }
         .sheet(isPresented: $showingSheet) {
@@ -28,6 +28,9 @@ struct PetSheet: View {
                                 .bold()
                             Button("Adicionar") {
                                 showingSheet = false
+                                viewM.save()
+                                viewM.fetchPets()
+                                viewM.pickerClear()
                             }
                             .foregroundColor(Color("cancel"))
                             .bold()
@@ -38,10 +41,10 @@ struct PetSheet: View {
                     .frame(width: 400, height: 0.5)
                     .foregroundColor(.gray)
                     .padding(.top, -23)
-                AddPetView(viewModel: PetViewModel(stack: .shared))
+                AddPetView(viewModel: viewM)
             }
+            .background(Color("editPetPicker"))
         }
-        .background(Color("editPetPicker"))
     }
 }
 

@@ -7,10 +7,9 @@
 import Foundation
 import CoreData
 
-struct CoreDataStack {
+final class CoreDataStack {
     static let shared = CoreDataStack()
     let persistentContainer: NSPersistentContainer
-    
     var viewContext: NSManagedObjectContext {
         persistentContainer.viewContext
     }
@@ -30,24 +29,25 @@ struct CoreDataStack {
         if inMemory {
             persistentContainer.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-        persistentContainer.loadPersistentStores { (storeDescription, error) in
+        persistentContainer.loadPersistentStores { (_,error) in
             if let error = error as NSError? {
                 print("CoreDataStack Error - Unresolved error \(error), \(error.userInfo)")
             }
         }
-    }
-    func saveContext() -> Bool {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-                return true
-            } catch {
-                let nsError = error as NSError
-                return false
-            }
-        } else {
-            return false
-        }
+        persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
     }
 }
+//    func saveContext() -> Bool {
+//        let context = persistentContainer.viewContext
+//        if context.hasChanges {
+//            do {
+//                try context.save()
+//                return true
+//            } catch {
+//                let nsError = error as NSError
+//                return false
+//            }
+//        } else {
+//            return false
+//        }
+//    }

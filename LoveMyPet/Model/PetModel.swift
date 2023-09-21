@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-
 enum Race: String, Codable, CaseIterable {
     case naoEsc = "Não escolhida"
     case siamese = "Siamese"
@@ -66,14 +65,14 @@ enum Race: String, Codable, CaseIterable {
     case saddlebred = "Saddlebred"
     case fjord = "Fjord"
     case other = "Outros"
-    
+
     var description: String {
         return self.rawValue
     }
 }
 
 enum Species: String, Codable, CaseIterable {
-    case none = "Não escolhida"
+    case naoEsc = "Não escolhida"
     case cat = "Gato"
     case bird = "Pássaro"
     case dog = "Cachorro"
@@ -82,10 +81,10 @@ enum Species: String, Codable, CaseIterable {
     case turtle = "Tartaruga"
     case horse = "Cavalo"
     case other = "Outros"
-    
+
     var description: String {
         switch self {
-        case .none:
+        case .naoEsc:
             return "Não escolhida"
         case .cat:
             return "Gato"

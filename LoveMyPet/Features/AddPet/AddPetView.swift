@@ -14,7 +14,7 @@ struct AddPetView: View {
             VStack {
                 ImagePicker()
                     .padding(.top, 20)
-                List {
+                Form {
                     PickerText(textInput: "Nome do Pet", petName: $viewModel.name)
                         .listRowBackground(Color("editPetPicker"))
                     Pickers(title: "Gênero", selectedValue: $viewModel.gender, options: GenderModel.allCases)
@@ -22,12 +22,12 @@ struct AddPetView: View {
                     Pickers(title: "Espécie", selectedValue: $viewModel.species, options: Species.allCases)
                         .listRowBackground(Color("editPetPicker"))
                     Pickers(title: "Raça", selectedValue: $viewModel.race, options: viewModel.availableRaces)
-                        .listRowBackground(Color("editPetPicker"));
+                        .listRowBackground(Color("editPetPicker"))
                     DatePicker("Nascimento", selection: $viewModel.age, displayedComponents: .date)
                         .environment(\.locale, Locale.init(identifier: "pt"))
                         .listRowBackground(Color("editPetPicker"))
                 }
-                ExtraPickers(viewM: PetViewModel(stack: .shared))
+                ExtraPickers(viewM: viewModel)
                 .padding(.top, -35)
 
             }
