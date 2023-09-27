@@ -3,7 +3,7 @@ import PhotosUI
 
 struct ImagePicker: View {
     @State private var avatarItem: PhotosPickerItem?
-    @State private var avatarImage: Image?
+    @State var avatarImage: Image?
     var body: some View {
         VStack {
             PhotosPicker(selection: $avatarItem, matching: .images) {

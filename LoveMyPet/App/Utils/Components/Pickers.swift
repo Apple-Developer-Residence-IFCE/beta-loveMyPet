@@ -16,7 +16,7 @@ struct Pickers<Op>: View where Op: Hashable {
             Text(title)
                 .foregroundColor(Color("text"))
             Spacer()
-            Picker(title, selection: $selectedValue) {
+            Picker("", selection: $selectedValue) {
                 ForEach(options, id: \.self) { option in
                     buildOption(option)
                 }

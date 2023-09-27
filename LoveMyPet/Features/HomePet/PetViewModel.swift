@@ -16,6 +16,7 @@ class PetViewModel: ObservableObject {
     @Published var gender: GenderModel = GenderModel.none
     @Published var race: Race = .naoEsc
     @Published var age: Date = Date()
+    @Published var formattedAge: Date = Date()
     @Published var weight: Double = 0.0
     @Published var image: URL? = URL(string: "")
     @Published var castrated: IsCastrated = .isNot
@@ -31,12 +32,14 @@ class PetViewModel: ObservableObject {
     init(stack: CoreDataStack, editPet: Pet? = nil) {
         self.stack = stack
         self.editPet = editPet
+    } 
+    func formatDate(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return dateFormatter.string(from: date)
     }
-    func setWeight(kgramas: Int, gramas: Int) -> Double {
-        let peso = Double(kgramas) + Double(gramas) / 10.0
-        weight = peso
-        return peso
-    }
+
+    
     func racesForSpecies(_ especie: Species) -> [Race] {
         switch especie {
         case .naoEsc:
@@ -75,8 +78,7 @@ class PetViewModel: ObservableObject {
             }
         }
     }
-    
-    func pickerClear () {
+    func pickerClear() {
         name = ""
         species = Species.naoEsc
         race = Race.naoEsc
@@ -87,7 +89,6 @@ class PetViewModel: ObservableObject {
             self.age = Date()
         }
     }
-    
     func save() {
         var pet: Pet
         if let editPet = editPet {
@@ -100,7 +101,7 @@ class PetViewModel: ObservableObject {
         pet.species = species.description
         pet.age = age
         pet.race = race.description
-        pet.weight = weight
+        pet.weight = Double(quilos) + Double(grama) / 10.0
         pet.image = image
         pet.castrated = castrated.description
         pet.gender = gender.description
@@ -110,7 +111,6 @@ class PetViewModel: ObservableObject {
             print("Error para salvar o pet: \(error)")
         }
     }
-
     func fetchPets() {
         let request = NSFetchRequest<Pet>(entityName: "Pet")
         do {
@@ -119,6 +119,19 @@ class PetViewModel: ObservableObject {
             print("error fetching. \(error)")
         }
     }
+    func selectedPet(_ pet: Pet) {
+        self.editPet = pet
+        self.name = pet.name ?? ""
+        self.weight = pet.weight
+        self.age = pet.age ?? Date()
+        self.castrated = IsCastrated(rawValue: pet.castrated ?? IsCastrated.isNot.description) ?? IsCastrated.isNot
+        self.gender = GenderModel(rawValue: pet.gender ?? GenderModel.none.description) ?? GenderModel.none
+        self.species = Species(rawValue: pet.species ?? Species.naoEsc.description) ?? Species.naoEsc
+        self.race = Race(rawValue: pet.race ?? Race.naoEsc.description) ?? Race.naoEsc
+        self.image = pet.image // Se a propriedade "image" for corretamente uma URL em sua classe Pet
+    }
+
+
 }
 //    func saveEditPet() {
 //        if pet.hasChanges {

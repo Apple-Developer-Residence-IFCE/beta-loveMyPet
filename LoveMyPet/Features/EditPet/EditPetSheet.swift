@@ -1,12 +1,16 @@
 import SwiftUI
 
 struct EditPetSheet: View {
+    @EnvironmentObject private var editVM: PetViewModel
     @State private var showingSheet = false
     var body: some View {
         VStack {
-            Button("Mostrar Sheet") {
+            Button("Editar") {
                 showingSheet = true
             }
+            .foregroundColor(Color("cancel"))
+            .background(Color("background"))
+            .bold()
         }
         .sheet(isPresented: $showingSheet) {
             VStack(spacing: -22) {

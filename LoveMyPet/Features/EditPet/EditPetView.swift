@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditPetView: View {
+    @EnvironmentObject var viewModel: PetViewModel
     @State private var showingSheet = false
     @State var isView: Bool = false
     var body: some View {
@@ -15,10 +16,11 @@ struct EditPetView: View {
             VStack {
                 Spacer(minLength: 25)
                 ImagePicker()
-                PickerView()
+                //PickerView()
                     .padding(.top, -15)
-                ExtraPickers(viewM: PetViewModel(stack: .shared))
+                ExtraPickers(viewM: viewModel)
                 Button(action: {
+                    viewModel.delete()
                     print("Cadastro excluído!")
                 }
                 ) {
