@@ -10,25 +10,23 @@ import SwiftUI
 enum IsCastrated: String, Codable, CaseIterable {
     case yes = "Sim"
     case isNot = "Não"
-    var description: Bool {
+    var description: String {
         switch self {
         case .yes:
-            return true
+            return "Sim"
         case .isNot:
-            return false
+            return "Não"
         }
     }
 }
 
 struct ExtraPickers: View {
     @ObservedObject var viewM: PetViewModel
-    @State var kilo: Int = 0
-    @State var gram: Int = 0
     @State var isView: Bool = false
     var body: some View {
         VStack {
             List {
-                PickerKG(viewM: PetViewModel(stack: .shared), isView: $isView)
+                PickerKG(quilo: $viewM.quilos, grama: $viewM.grama, isView: $isView)
                     .listRowBackground(Color("editPetPicker"))
                     .padding(.bottom, -30)
                 Picker(selection: $viewM.castrated, label: Text("Castrado(a)?")) {

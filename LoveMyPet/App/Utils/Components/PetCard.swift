@@ -34,8 +34,8 @@ struct PetCard: View {
         .padding(.vertical, 17)
         .padding(.horizontal, 15)
         .overlay(
-            RoundedRectangle(cornerRadius: 13)
-                .stroke(lineWidth: 4)
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(lineWidth: 2)
                 .foregroundColor(Color("petCardBorder"))
         )
         .background(Color("petCard"))

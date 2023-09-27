@@ -31,6 +31,7 @@ struct PetSheet: View {
                                 viewM.save()
                                 viewM.fetchPets()
                                 viewM.pickerClear()
+
                             }
                             .foregroundColor(Color("cancel"))
                             .bold()

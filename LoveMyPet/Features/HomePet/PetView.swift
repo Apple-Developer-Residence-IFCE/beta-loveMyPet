@@ -10,21 +10,28 @@ import SwiftUI
 struct PetView: View {
     @StateObject var viewM = PetViewModel(stack: CoreDataStack.shared)
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 if viewM.savedPets.isEmpty {
                     EmptyPetCard()
                         .padding(.bottom, 490)
                 } else {
                     ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(viewM.savedPets, id: \.id) { pet in
-                            PetCard(petName: pet.name ?? "", petType: pet.race ?? "" )
-                                .padding(.horizontal, 15)
-                        }
+                        ForEach(viewM.savedPets, id: \.self) { pet in
+                            NavigationLink {
+                                PetDetails()
+                                    .environmentObject(viewM)
+                                    .onAppear{
+                                        viewM.selectedPet(pet)
+                                    }
+                            } label: {
+                                PetCard(petName: pet.name ?? "", petType: pet.race ?? "")
+                                    .padding(.horizontal, 15)
+                            }
+                        }.foregroundColor(.black)
                         .padding(.vertical, 30)
                         .listRowBackground(Color("background"))
                     }
-                
                 }
             }
             .onAppear {
