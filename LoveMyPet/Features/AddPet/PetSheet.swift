@@ -26,17 +26,18 @@ struct PetSheet: View {
                             .foregroundColor(Color("cancel"))
                             Text("Adicionar Pet")
                                 .bold()
+                            
                             Button("Adicionar") {
                                 showingSheet = false
                                 viewM.save()
                                 viewM.fetchPets()
                                 viewM.pickerClear()
-
+                                
                             }
                             .foregroundColor(Color("cancel"))
                             .bold()
                         }
-                        .padding(.top, -25))
+                            .padding(.top, -25))
                     .frame(height: 100)
                 Rectangle()
                     .frame(width: 400, height: 0.5)
@@ -48,7 +49,6 @@ struct PetSheet: View {
         }
     }
 }
-
 struct PetSheet_Previews: PreviewProvider {
     static var previews: some View {
         PetSheet()

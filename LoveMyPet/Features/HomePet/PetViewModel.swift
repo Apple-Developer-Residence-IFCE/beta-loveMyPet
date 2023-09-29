@@ -32,13 +32,13 @@ class PetViewModel: ObservableObject {
     init(stack: CoreDataStack, editPet: Pet? = nil) {
         self.stack = stack
         self.editPet = editPet
-    } 
+    }
     func formatDate(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         return dateFormatter.string(from: date)
     }
-
+    
     
     func racesForSpecies(_ especie: Species) -> [Race] {
         switch especie {
@@ -63,7 +63,16 @@ class PetViewModel: ObservableObject {
             return []
         }
     }
-
+    func saveEditPet() {
+        if ((editPet?.hasChanges) != nil) {
+            do {
+                try stack.viewContext.save()
+            } catch {
+                print ("Erro ao salvar o animal: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     func delete() {
         do {
             if let editPet = editPet {
@@ -123,21 +132,13 @@ class PetViewModel: ObservableObject {
         self.editPet = pet
         self.name = pet.name ?? ""
         self.weight = pet.weight
+        self.quilos = Int(pet.weight)
+        self.grama = Int((pet.weight - Double(quilos)) * 10 )
         self.age = pet.age ?? Date()
         self.castrated = IsCastrated(rawValue: pet.castrated ?? IsCastrated.isNot.description) ?? IsCastrated.isNot
         self.gender = GenderModel(rawValue: pet.gender ?? GenderModel.none.description) ?? GenderModel.none
         self.species = Species(rawValue: pet.species ?? Species.naoEsc.description) ?? Species.naoEsc
         self.race = Race(rawValue: pet.race ?? Race.naoEsc.description) ?? Race.naoEsc
-        self.image = pet.image // Se a propriedade "image" for corretamente uma URL em sua classe Pet
+        self.image = pet.image
     }
-
-
 }
-//    func saveEditPet() {
-//        if pet.hasChanges {
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                print ("Erro ao salvar o animal: \(error.localizedDescription)")
-//            }
-//        }

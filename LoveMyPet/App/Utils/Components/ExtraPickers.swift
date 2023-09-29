@@ -21,15 +21,16 @@ enum IsCastrated: String, Codable, CaseIterable {
 }
 
 struct ExtraPickers: View {
-    @ObservedObject var viewM: PetViewModel
+    @EnvironmentObject var viewModel: PetViewModel
+//    @ObservedObject var viewM: PetViewModel
     @State var isView: Bool = false
     var body: some View {
         VStack {
             List {
-                PickerKG(quilo: $viewM.quilos, grama: $viewM.grama, isView: $isView)
+                PickerKG(quilo: $viewModel.quilos, grama: $viewModel.grama, isView: $isView)
                     .listRowBackground(Color("editPetPicker"))
                     .padding(.bottom, -30)
-                Picker(selection: $viewM.castrated, label: Text("Castrado(a)?")) {
+                Picker(selection: $viewModel.castrated, label: Text("Castrado(a)?")) {
                     ForEach(IsCastrated.allCases, id: \.self) { castratedCase in
                         Text(castratedCase.rawValue).tag(castratedCase)
                     }
@@ -45,6 +46,7 @@ struct ExtraPickers: View {
 
 struct ExtraPickers_Previews: PreviewProvider {
     static var previews: some View {
-        ExtraPickers(viewM: PetViewModel(stack: .shared))
+        ExtraPickers()
+            .environmentObject(PetViewModel(stack: .shared))
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PetDetails: View {
+    @Environment (\.presentationMode) var presetationMode
     @EnvironmentObject var petDetailViewM: PetViewModel
     var body: some View {
         VStack {
@@ -60,32 +61,34 @@ struct PetDetails: View {
                         .font(.custom("Poppins-Bold", size: 16))
                     Spacer()
                     Text(String(format: "%.1f kg", petDetailViewM.weight))
-                            .font(.custom("Poppins-Regular", size: 16))
+                        .font(.custom("Poppins-Regular", size: 16))
                 }.padding(.horizontal)
                     .padding(.vertical, 5)
                 Rectangle()
                     .foregroundColor(Color("tabBarLine"))
                     .frame(width: 330, height: 3)
-            HStack {
-                Text("Adicionais")
-                    .font(.custom("Poppins-Bold", size: 20))
-                Spacer()
+                HStack {
+                    Text("Adicionais")
+                        .font(.custom("Poppins-Bold", size: 20))
+                    Spacer()
+                }.padding(.horizontal)
+                    .padding(.vertical, 5)
+                HStack {
+                    Text("Castrado(a)?")
+                        .font(.custom("Poppins-Bold", size: 16))
+                    Spacer()
+                    Text("\(petDetailViewM.castrated.rawValue)")
+                }.padding(.horizontal)
+                
             }.padding(.horizontal)
-                .padding(.vertical, 5)
-            HStack {
-                Text("Castrado(a)?")
-                    .font(.custom("Poppins-Bold", size: 16))
-                Spacer()
-                Text("\(petDetailViewM.castrated.rawValue)")
-            }.padding(.horizontal)
-
-            }.padding(.horizontal)
-            }
+        }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                        EditPetSheet()
-                            .environmentObject(petDetailViewM)
-                    }
+                EditPetSheet(onDismiss: {
+                    presetationMode.wrappedValue.dismiss()
+                })
+                    .environmentObject(petDetailViewM)
+            }
         }
         .frame(maxWidth: .infinity)
         .background(Color("background"))
@@ -102,6 +105,6 @@ struct PetDetails_Previews: PreviewProvider {
     static var previews: some View {
         PetDetails()
             .environmentObject(PetViewModel(stack: .shared)
-        )
+            )
     }
 }

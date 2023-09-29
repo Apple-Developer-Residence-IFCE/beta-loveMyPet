@@ -3,6 +3,8 @@ import SwiftUI
 struct EditPetSheet: View {
     @EnvironmentObject private var editVM: PetViewModel
     @State private var showingSheet = false
+    var onDismiss: () -> Void
+    
     var body: some View {
         VStack {
             Button("Editar") {
@@ -12,7 +14,7 @@ struct EditPetSheet: View {
             .background(Color("background"))
             .bold()
         }
-        .sheet(isPresented: $showingSheet) {
+        .sheet(isPresented: $showingSheet, onDismiss: onDismiss) {
             VStack(spacing: -22) {
                 Rectangle()
                     .padding(.top, -40)
@@ -28,7 +30,9 @@ struct EditPetSheet: View {
                             Text("Editar Pet")
                                 .bold()
                             Button("Salvar") {
+                                editVM.save()
                                 showingSheet = false
+                                editVM.fetchPets()
                             }
                             .foregroundColor(Color("cancel"))
                             .bold()
@@ -40,14 +44,15 @@ struct EditPetSheet: View {
                     .foregroundColor(.gray)
                     .padding(.top, -23)
                 EditPetView()
+                    .environmentObject(editVM)
             }
         }
         .background(Color("editPetPicker"))
     }
 }
 
-struct EditPetSheet_Previews: PreviewProvider {
-    static var previews: some View {
-        EditPetSheet()
-    }
-}
+//struct EditPetSheet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditPetSheet(
+//    }
+//}
