@@ -29,8 +29,8 @@ struct PetView: View {
                                     .padding(.horizontal, 15)
                             }
                         }.foregroundColor(.black)
-                        .padding(.vertical, 30)
-                        .listRowBackground(Color("background"))
+                            .padding(.vertical, 30)
+                            .listRowBackground(Color("background"))
                     }
                 }
             }
@@ -42,9 +42,9 @@ struct PetView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                            PetSheet()
-                                .environmentObject(viewM)
-                        }
+                    PetSheet()
+                        .environmentObject(viewM)
+                }
             }
             .frame(maxWidth: .infinity)
             .background(Color("background"))
@@ -56,10 +56,3 @@ struct PetView_Previews: PreviewProvider {
         PetView()
     }
 }
-//                Color("background")
-// .scrollContentBackground(.hidden)
-//            .safeAreaInset(edge: .top, alignment: .trailing, spacing: nil) {
-//                Text("")
-//                    .frame(maxWidth: .infinity)
-//                    .background(Color("background"))
-//            }

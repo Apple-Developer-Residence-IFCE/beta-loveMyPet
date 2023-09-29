@@ -37,17 +37,3 @@ final class CoreDataStack {
         persistentContainer.viewContext.automaticallyMergesChangesFromParent = true
     }
 }
-//    func saveContext() -> Bool {
-//        let context = persistentContainer.viewContext
-//        if context.hasChanges {
-//            do {
-//                try context.save()
-//                return true
-//            } catch {
-//                let nsError = error as NSError
-//                return false
-//            }
-//        } else {
-//            return false
-//        }
-//    }
