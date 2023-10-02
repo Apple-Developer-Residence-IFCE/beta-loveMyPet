@@ -16,7 +16,7 @@ struct EditPetView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                ImagePicker()
+                ImagePicker(avatarImage: $viewModel.image)
                     .padding(.top, 20)
                 List {
                     PickerText(textInput: "Nome do Pet", petName: $viewModel.name)

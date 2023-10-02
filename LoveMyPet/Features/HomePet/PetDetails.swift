@@ -13,10 +13,14 @@ struct PetDetails: View {
     var body: some View {
         VStack {
             Color("background")
-            Image("StupidCat")
-                .resizable()
-                .frame(maxWidth: .infinity)
-                .frame(height: 215)
+            if let data = petDetailViewM.image, let uiImage = UIImage(data: data) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .aspectRatio( contentMode: .fill)
+                    .frame(width: .infinity)
+                    .frame(height: 194)
+                    .clipped()
+            }
             VStack {
                 HStack {
                     Text("Informações")

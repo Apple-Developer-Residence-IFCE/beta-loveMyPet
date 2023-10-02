@@ -4,12 +4,13 @@ import PhotosUI
 struct PetCard: View {
     @State var petName: String
     @State var petType: String
-    @State private var avatarImage: Image?
+    @State var avatarImage: Data?
 
     var body: some View {
         HStack {
-            if let avatarImage {
-                avatarImage
+            if let data = avatarImage, let uiImage = UIImage(data: data) {
+                Image(uiImage: uiImage)
+                    .resizable()
                     .frame(width: 64, height: 64)
                     .cornerRadius(32)
             } else {
@@ -47,6 +48,6 @@ struct PetCard: View {
 
 struct PetCard_Previews: PreviewProvider {
     static var previews: some View {
-        PetCard(petName: "Bidu", petType: "Cachorro")
+        PetCard(petName: "Bidu", petType: "Cachorro", avatarImage: Data())
     }
 }

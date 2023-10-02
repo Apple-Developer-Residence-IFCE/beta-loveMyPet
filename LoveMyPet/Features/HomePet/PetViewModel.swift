@@ -18,7 +18,7 @@ class PetViewModel: ObservableObject {
     @Published var age: Date = Date()
     @Published var formattedAge: Date = Date()
     @Published var weight: Double = 0.0
-    @Published var image: URL? = URL(string: "")
+    @Published var image: Data? = Data()
     @Published var castrated: IsCastrated = .isNot
     @Published var availableRaces: [Race] = [.naoEsc]
     @Published var quilos: Int = 0
@@ -139,6 +139,6 @@ class PetViewModel: ObservableObject {
         self.gender = GenderModel(rawValue: pet.gender ?? GenderModel.none.description) ?? GenderModel.none
         self.species = Species(rawValue: pet.species ?? Species.naoEsc.description) ?? Species.naoEsc
         self.race = Race(rawValue: pet.race ?? Race.naoEsc.description) ?? Race.naoEsc
-        self.image = pet.image
+        self.image = pet.image!
     }
 }
