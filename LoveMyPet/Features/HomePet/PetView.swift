@@ -25,7 +25,7 @@ struct PetView: View {
                                         viewM.selectedPet(pet)
                                     }
                             } label: {
-                                PetCard(petName: pet.name ?? "", petType: pet.race ?? "")
+                                PetCard(petName: pet.name ?? "", petType: pet.race ?? "", avatarImage: pet.image)
                                     .padding(.horizontal, 15)
                             }
                         }.foregroundColor(.black)
