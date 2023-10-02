@@ -12,42 +12,64 @@ struct PetView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                if viewM.savedPets.isEmpty {
-                    EmptyPetCard()
-                        .padding(.bottom, 490)
-                } else {
-                    ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(viewM.savedPets, id: \.self) { pet in
-                            NavigationLink {
-                                PetDetails()
-                                    .environmentObject(viewM)
-                                    .onAppear{
-                                        viewM.selectedPet(pet)
+                ScrollView(.vertical) {
+                    if viewM.savedPets.isEmpty {
+                        EmptyPetCard()
+                            .padding(.bottom, 490)
+                    } else {
+                        if viewM.editBool == true {
+                            ScrollView(.vertical, showsIndicators: viewM.editBool) {
+                                ForEach(viewM.savedPets, id: \.self) { pet in
+                                    NavigationLink {
+                                        PetDetails()
+                                            .environmentObject(viewM)
+                                            .onAppear{
+                                                viewM.selectedPet(pet)
+                                            }
+                                    } label: {
+                                        PetCard(petName: pet.name ?? "", petType: pet.race ?? "")
+                                            .padding(.horizontal, 15)
                                     }
-                            } label: {
-                                PetCard(petName: pet.name ?? "", petType: pet.race ?? "")
-                                    .padding(.horizontal, 15)
+                                }.foregroundColor(.black)
+                                    .padding(.vertical, 30)
+                                    .listRowBackground(Color("background"))
                             }
-                        }.foregroundColor(.black)
-                            .padding(.vertical, 30)
-                            .listRowBackground(Color("background"))
+                        }
+                        else {
+                            ScrollView(.vertical) {
+                                ForEach(viewM.savedPets, id: \.self) { pet in
+                                    NavigationLink {
+                                        PetDetails()
+                                            .environmentObject(viewM)
+                                            .onAppear{
+                                                viewM.selectedPet(pet)
+                                            }
+                                    } label: {
+                                        PetCard(petName: pet.name ?? "", petType: pet.race ?? "")
+                                            .padding(.horizontal, 15)
+                                    }
+                                }.foregroundColor(.black)
+                                    .padding(.vertical, 30)
+                                    .listRowBackground(Color("background"))
+                            }
+                        }
                     }
                 }
-            }
-            .onAppear {
-                viewM.fetchPets()
-                viewM.pickerClear()
-            }
-            .navigationTitle("Pets")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    PetSheet()
-                        .environmentObject(viewM)
+                .onAppear {
+                    viewM.fetchPets()
+                    viewM.pickerClear()
                 }
+                .navigationTitle("Pets")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        PetSheet()
+                            .environmentObject(viewM)
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .background(Color("background"))
             }
-            .frame(maxWidth: .infinity)
-            .background(Color("background"))
         }
     }
 }

@@ -11,6 +11,7 @@ import CoreData
 class PetViewModel: ObservableObject {
     let stack: CoreDataStack
     private var editPet: Pet?
+    @Published var editBool: Bool = false
     @Published var savedPets: [Pet] = []
     @Published var name: String = ""
     @Published var gender: GenderModel = GenderModel.none
@@ -67,6 +68,7 @@ class PetViewModel: ObservableObject {
         if ((editPet?.hasChanges) != nil) {
             do {
                 try stack.viewContext.save()
+                refreshCard()
             } catch {
                 print ("Erro ao salvar o animal: \(error.localizedDescription)")
             }
@@ -116,9 +118,17 @@ class PetViewModel: ObservableObject {
         pet.gender = gender.description
         do {
             try stack.viewContext.save()
+            refreshCard()
         } catch {
             print("Error para salvar o pet: \(error)")
         }
+    }
+    func refreshCard () {
+        guard let editPet = editPet,
+              let index = savedPets.firstIndex(where: {$0.id! == editPet.id!})
+        else { return }
+        savedPets.remove(at: index)
+        savedPets.append(editPet)
     }
     func fetchPets() {
         let request = NSFetchRequest<Pet>(entityName: "Pet")
@@ -142,3 +152,5 @@ class PetViewModel: ObservableObject {
         self.image = pet.image
     }
 }
+
+

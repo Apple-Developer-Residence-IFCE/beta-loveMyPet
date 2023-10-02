@@ -33,6 +33,14 @@ struct EditPetSheet: View {
                                 editVM.save()
                                 showingSheet = false
                                 editVM.fetchPets()
+                                editVM.refreshCard()
+                                if editVM.editBool == true {
+                                    editVM.editBool = false
+                                }
+                                else {
+                                    editVM.editBool = true
+                                }
+                                
                             }
                             .foregroundColor(Color("cancel"))
                             .bold()
