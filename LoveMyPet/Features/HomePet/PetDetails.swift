@@ -16,9 +16,7 @@ struct PetDetails: View {
             if let data = petDetailViewM.image, let uiImage = UIImage(data: data) {
                 Image(uiImage: uiImage)
                     .resizable()
-                    .aspectRatio( contentMode: .fill)
-                    .frame(width: .infinity)
-                    .frame(height: 194)
+                    .frame(width: 394, height: 194)
                     .clipped()
             }
             VStack {

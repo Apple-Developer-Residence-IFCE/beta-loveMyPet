@@ -98,6 +98,14 @@ class PetViewModel: ObservableObject {
             self.age = Date()
         }
     }
+   private func refreshCard() {
+        editPet?.id = UUID()
+//        guard let editPet = editPet,
+//              let index = savedPets.firstIndex(where: { $0.id! == editPet.id! })
+//        else { return }
+//        savedPets.remove(at: index)
+//        savedPets.insert(editPet, at: index)
+    }
     func save() {
         var pet: Pet
         if let editPet = editPet {
@@ -116,6 +124,7 @@ class PetViewModel: ObservableObject {
         pet.gender = gender.description
         do {
             try stack.viewContext.save()
+            refreshCard()
         } catch {
             print("Error para salvar o pet: \(error)")
         }

@@ -24,7 +24,7 @@ struct ImagePicker: View {
                         .foregroundColor(Color("text"))
                 }
             }
-            .foregroundColor(Color("PhotoPickerColor"))
+            .foregroundColor(Color("text"))
         }
         .onChange(of: avatarItem) { _ in
             guard let items = avatarItem.first else { return }

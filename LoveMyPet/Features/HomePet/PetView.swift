@@ -17,7 +17,7 @@ struct PetView: View {
                         .padding(.bottom, 490)
                 } else {
                     ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(viewM.savedPets, id: \.self) { pet in
+                        ForEach(viewM.savedPets) { pet in
                             NavigationLink {
                                 PetDetails()
                                     .environmentObject(viewM)
@@ -28,9 +28,10 @@ struct PetView: View {
                                 PetCard(petName: pet.name ?? "", petType: pet.race ?? "", avatarImage: pet.image)
                                     .padding(.horizontal, 15)
                             }
-                        }.foregroundColor(.black)
-                            .padding(.vertical, 30)
-                            .listRowBackground(Color("background"))
+                        }
+                        .foregroundColor(.black)
+                        .padding(.vertical, 30)
+                        .listRowBackground(Color("background"))
                     }
                 }
             }
@@ -38,6 +39,7 @@ struct PetView: View {
                 viewM.fetchPets()
                 viewM.pickerClear()
             }
+            
             .navigationTitle("Pets")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

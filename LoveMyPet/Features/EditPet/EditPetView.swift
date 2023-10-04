@@ -36,6 +36,7 @@ struct EditPetView: View {
                     .environmentObject(viewModel)
                     .padding(.bottom, 65)
                 Button(action: {
+                    showingAlert = true
                     
                 }, label: {
                     Text("Excluir cadastro")
@@ -45,6 +46,17 @@ struct EditPetView: View {
                         .cornerRadius(10)
                 })
                 .padding(.top, -10)
+                .alert(isPresented: $showingAlert) {
+                    Alert(
+                        title: Text("Confirmação"),
+                        message: Text("Deseja excluir o cadastro? Essa ação não poderá ser desfeita."),
+                        primaryButton: .destructive(Text("Excluir")) {
+                            viewModel.delete()
+                            dismiss()
+                        },
+                        secondaryButton: .cancel(Text("Cancelar"))
+                    )
+                }
                 
             }
             .background(Color("background"))
