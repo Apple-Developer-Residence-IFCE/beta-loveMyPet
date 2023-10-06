@@ -81,12 +81,11 @@ struct PetDetails: View {
                     Spacer()
                     Text("\(petDetailViewM.castrated.rawValue)")
                 }.padding(.horizontal)
-                
             }.padding(.horizontal)
         }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                EditPetSheet(onDismiss: {
+                EditPetView(onDismiss: {
                     presetationMode.wrappedValue.dismiss()
                 })
                     .environmentObject(petDetailViewM)
@@ -100,7 +99,6 @@ struct PetDetails: View {
         .background(Color("background"))
         .navigationTitle("Informações do pet")
     }
-    
 }
 
 struct PetDetails_Previews: PreviewProvider {

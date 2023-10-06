@@ -1,58 +1,71 @@
+//
+//  SwiftUiTeste.swift
+//  LoveMyPet
+//
+//  Created by userext on 01/08/23.
+//
+
 import SwiftUI
 
 struct EditPetSheet: View {
-    @EnvironmentObject private var editVM: PetViewModel
+    @EnvironmentObject var viewModel: PetViewModel
+    @Environment(\.dismiss) var dismiss
+    @State var isView: Bool = false
+    @State var showingAlert: Bool = false
     @State private var showingSheet = false
-    var onDismiss: () -> Void
-    
     var body: some View {
-        VStack {
-            Button("Editar") {
-                showingSheet = true
+        NavigationStack {
+            VStack {
+                ImagePicker(avatarImage: $viewModel.image)
+                    .padding(.top, 20)
+                List {
+                    PickerText(textInput: "Nome do Pet", petName: $viewModel.name)
+                        .listRowBackground(Color("editPetPicker"))
+                    Pickers(title: "Gênero", selectedValue: $viewModel.gender, options: GenderModel.allCases)
+                        .listRowBackground(Color("editPetPicker"))
+                    Pickers(title: "Espécie", selectedValue: $viewModel.species, options: Species.allCases)
+                        .listRowBackground(Color("editPetPicker"))
+                    Pickers(title: "Raça", selectedValue: $viewModel.race, options: viewModel.availableRaces)
+                        .listRowBackground(Color("editPetPicker"))
+                        .pickerStyle(.navigationLink)
+                    DatePicker("Nascimento", selection: $viewModel.age, displayedComponents: .date)
+                        .environment(\.locale, Locale.init(identifier: "pt"))
+                        .listRowBackground(Color("editPetPicker"))
+                }
+                ExtraPickers()
+                    .environmentObject(viewModel)
+                    .padding(.bottom, 65)
+                Button(action: {
+                    showingAlert = true
+                }, label: {
+                    Text("Excluir cadastro")
+                        .foregroundColor(.white)
+                        .frame(width: 327, height: 48)
+                        .background(Color("delete"))
+                        .cornerRadius(10)
+                })
+                .padding(.top, -10)
+                .alert(isPresented: $showingAlert) {
+                    Alert(
+                        title: Text("Deseja excluir o cadrstro?"),
+                        message: Text("Uma vez excluida, essa ação não pode ser desfeita."),
+                        primaryButton: .destructive(Text("Excluir")) {
+                            viewModel.delete()
+                            dismiss()
+                        },
+                        secondaryButton: .cancel(Text("Cancelar"))
+                    )
+                }
             }
-            .foregroundColor(Color("cancel"))
             .background(Color("background"))
-            .bold()
+            .background(.clear)
+            .scrollContentBackground(.hidden)
         }
-        .sheet(isPresented: $showingSheet, onDismiss: onDismiss) {
-            VStack(spacing: -22) {
-                Rectangle()
-                    .padding(.top, -40)
-                    .frame(height: 25)
-                    .foregroundColor(Color("editPetPicker"))
-                    .background(.clear)
-                    .overlay(
-                        HStack(spacing: 85) {
-                            Button("Cancelar") {
-                                showingSheet = false
-                            }
-                            .foregroundColor(Color("cancel"))
-                            Text("Editar Pet")
-                                .bold()
-                            Button("Salvar") {
-                                editVM.save()
-                                showingSheet = false
-                                editVM.fetchPets()
-                            }
-                            .foregroundColor(Color("cancel"))
-                            .bold()
-                        }
-                            .padding(.top, -25))
-                    .frame(height: 100)
-                Rectangle()
-                    .frame(width: 400, height: 0.5)
-                    .foregroundColor(.gray)
-                    .padding(.top, -23)
-                EditPetView()
-                    .environmentObject(editVM)
-            }
-        }
-        .background(Color("editPetPicker"))
     }
 }
-
-//struct EditPetSheet_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditPetSheet(
-//    }
-//}
+struct EditPetView_Previews: PreviewProvider {
+    static var previews: some View {
+        EditPetSheet()
+            .environmentObject(PetViewModel(stack: .shared))
+    }
+}

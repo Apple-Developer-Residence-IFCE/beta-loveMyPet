@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 class ImageFileManager: ObservableObject {
@@ -12,7 +11,9 @@ class ImageFileManager: ObservableObject {
             return
         }
         do {
-            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+            let fileURLs = try fileManager.contentsOfDirectory(
+                at: documentsURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles
+            )
             for fileURL in fileURLs {
                 if let data = try? Data(contentsOf: fileURL), let image = UIImage(data: data) {
                     images.append(image)
@@ -25,7 +26,9 @@ class ImageFileManager: ObservableObject {
             guard let data = image.jpegData(compressionQuality: 1) ?? image.pngData() else {
                 return false
             }
-            guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+            guard let directory = try? FileManager.default.url(
+                for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false
+            ) as NSURL else {
                 return false
             }
             do {

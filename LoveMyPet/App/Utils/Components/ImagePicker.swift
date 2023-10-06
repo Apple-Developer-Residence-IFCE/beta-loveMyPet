@@ -12,14 +12,12 @@ struct ImagePicker: View {
                         .resizable()
                         .frame(width: 64, height: 64)
                         .clipShape(Circle())
-                    
                     Text("Trocar foto")
                         .foregroundColor(Color("text"))
                 } else {
                     Circle()
                         .foregroundColor(.gray)
                         .frame(width: 64, height: 64)
-                    
                     Text("Escolher foto")
                         .foregroundColor(Color("text"))
                 }
@@ -28,7 +26,6 @@ struct ImagePicker: View {
         }
         .onChange(of: avatarItem) { _ in
             guard let items = avatarItem.first else { return }
-            
             items.loadTransferable(type: Data.self) { result in
                 switch result {
                 case .success(let data):
@@ -46,8 +43,6 @@ struct ImagePicker: View {
         }
     }
 }
-
-
 struct ImagePicker_Previews: PreviewProvider {
     static var previews: some View {
         ImagePicker(avatarImage: .constant(UIImage(named: "StupidCat")?.jpegData(compressionQuality: 1.0)))

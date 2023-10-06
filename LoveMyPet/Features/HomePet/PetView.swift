@@ -21,7 +21,7 @@ struct PetView: View {
                             NavigationLink {
                                 PetDetails()
                                     .environmentObject(viewM)
-                                    .onAppear{
+                                    .onAppear {
                                         viewM.selectedPet(pet)
                                     }
                             } label: {
@@ -39,12 +39,11 @@ struct PetView: View {
                 viewM.fetchPets()
                 viewM.pickerClear()
             }
-            
             .navigationTitle("Pets")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    PetSheet()
+                    AddPetView()
                         .environmentObject(viewM)
                 }
             }

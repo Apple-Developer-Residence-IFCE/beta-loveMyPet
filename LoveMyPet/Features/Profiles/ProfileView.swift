@@ -9,7 +9,6 @@ struct ProfileView: View {
                     Color("background")
                 }
             }
-            //.preferredColorScheme(getPreferredAppTheme(for: themeViewModel.currentAppearence))
             .navigationTitle("Pets")
             .navigationBarTitleDisplayMode(.inline)
         }
