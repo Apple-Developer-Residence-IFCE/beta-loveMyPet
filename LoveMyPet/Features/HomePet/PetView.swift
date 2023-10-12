@@ -36,7 +36,6 @@ struct PetView: View {
                 }
             }
             .onAppear {
-                viewM.fetchPets()
                 viewM.pickerClear()
             }
             .navigationTitle("Pets")

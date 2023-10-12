@@ -33,6 +33,8 @@ class PetViewModel: ObservableObject {
     init(stack: CoreDataStack, editPet: Pet? = nil) {
         self.stack = stack
         self.editPet = editPet
+
+        self.fetchPets()
     }
     func formatDate(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -155,6 +157,7 @@ class PetViewModel: ObservableObject {
     
     func fetchPets() {
         let request = NSFetchRequest<Pet>(entityName: "Pet")
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         do {
             savedPets = try stack.viewContext.fetch(request)
         } catch let error {
