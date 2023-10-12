@@ -36,7 +36,6 @@ struct TabBar<Theme: View, Profiles: View>: View {
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarBackground(Color("tabBar"), for: .tabBar)
                 .tag(Tab.settings)
-                
         }
         .accentColor(Color("principal"))
     }

@@ -29,7 +29,7 @@ final class CoreDataStack {
         if inMemory {
             persistentContainer.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-        persistentContainer.loadPersistentStores { (_,error) in
+        persistentContainer.loadPersistentStores { (_, error) in
             if let error = error as NSError? {
                 print("CoreDataStack Error - Unresolved error \(error), \(error.userInfo)")
             }

@@ -21,10 +21,12 @@ struct PetCard: View {
 
             VStack(alignment: .leading) {
                 Text(petName)
+                    .foregroundColor(Color("petCardText"))
                     .font(.custom("Poppins", size: 16))
                     .bold()
                     .padding(0.3)
                 Text(petType)
+                    .foregroundColor(Color("petCardText"))
                     .font(.custom("Poppins", size: 12))
             }
             Spacer()
